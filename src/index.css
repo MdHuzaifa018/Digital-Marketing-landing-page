@@ -69,6 +69,32 @@
   padding-right: var(--container-px, 1.5rem);
 }
 
+/* GSAP Custom Classes */
+.gsap-reveal {
+  /* Initial state handled by JS */
+  will-change: transform, opacity;
+}
+
+.gsap-scrub-text {
+  background: linear-gradient(to right, #000000 50%, #cbd5e1 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  will-change: background-position;
+}
+.dark-bg .gsap-scrub-text {
+  background: linear-gradient(to right, #ffffff 50%, #475569 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
 /* ============================================
    BASE RESET & GLOBAL TYPOGRAPHY
    ============================================ */

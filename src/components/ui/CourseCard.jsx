@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Clock, MapPin, ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
+import { useModal } from '../../context/ModalContext';
 
 const CourseCard = ({ course, index = 0 }) => {
+  const { openModal } = useModal();
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -92,12 +95,12 @@ const CourseCard = ({ course, index = 0 }) => {
           </div>
         </div>
 
-        <a
-          href="#enroll"
-          className="btn btn-primary btn-lg w-full sm:w-auto text-base sm:text-lg font-900 uppercase tracking-wide px-8 py-4"
-        >
-          Enroll Now <ArrowRight size={20} />
-        </a>
+          <button 
+            onClick={() => openModal(course.title)}
+            className="w-full sm:w-auto btn btn-primary flex justify-center items-center shadow-[4px_4px_0px_#000] border-2 border-black"
+          >
+            Enroll Now <ArrowRight size={18} className="ml-2" />
+          </button>
       </div>
 
     </motion.div>

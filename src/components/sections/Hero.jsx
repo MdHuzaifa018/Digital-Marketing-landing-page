@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Sparkles, CheckCircle2, Award } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 import { WHATSAPP_URL } from '../../config/contact';
+import { useModal } from '../../context/ModalContext';
 
 const CYCLING_WORDS = ['Marketing.', 'SEO.', 'Google Ads.', 'Social Media.'];
 
@@ -21,6 +21,7 @@ const item = {
 
 const Hero = () => {
   const [wordIndex, setWordIndex] = useState(0);
+  const { openModal } = useModal();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -68,7 +69,7 @@ const Hero = () => {
             </motion.div>
 
             {/* Main Headline */}
-            <motion.h1 variants={item} className="text-hero leading-[1.05] max-w-[850px] text-[var(--color-primary)] font-heading uppercase">
+            <motion.h1 variants={item} className="text-hero leading-[1.05] max-w-[850px] text-[var(--color-primary)] font-heading uppercase gsap-scrub-text">
               Learn{' '}
               <span className="relative inline-block align-bottom min-w-[200px] sm:min-w-[240px] md:min-w-[320px] h-[1.3em]" aria-live="polite">
                 <AnimatePresence mode="popLayout">
@@ -79,6 +80,7 @@ const Hero = () => {
                     exit={{ opacity: 0, y: -24 }}
                     transition={{ duration: 0.3, ease: 'easeOut' }}
                     className="inline-block bg-[var(--color-secondary)] text-black px-4 py-1 border-2 border-black -skew-x-6 whitespace-nowrap shadow-[3px_3px_0px_#000000]"
+                    style={{ WebkitTextFillColor: 'initial', color: 'black' }}
                   >
                     {CYCLING_WORDS[wordIndex]}
                   </motion.span>
@@ -104,9 +106,10 @@ const Hero = () => {
 
             {/* CTAs */}
             <motion.div variants={item} className="flex flex-wrap items-center gap-4 mt-6">
-              <a href="#enroll" className="btn btn-primary btn-lg">
-                Enroll Now <ArrowRight size={18} />
-              </a>
+              <button onClick={() => openModal()} className="btn btn-primary btn-lg">
+                <span>Enroll Now</span>
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              </button>
               <a href="#contact" className="btn btn-secondary btn-lg">
                 Contact Us
               </a>

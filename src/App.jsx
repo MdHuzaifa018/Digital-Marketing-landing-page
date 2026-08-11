@@ -35,25 +35,29 @@ const PageLoading = () => (
   </div>
 );
 
+import { ModalProvider } from './context/ModalContext';
+
 const App = () => {
   return (
     <BrowserRouter>
-      <MainLayout>
-        <AnimatePresence mode="wait" initial={false}>
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <PageWrapper>
-                  <Home />
-                </PageWrapper>
-              }
-            />
-            {/* Catch-all redirect to Home */}
-            <Route path="*" element={<PageWrapper><NotFound /></PageWrapper>} />
-          </Routes>
-        </AnimatePresence>
-      </MainLayout>
+      <ModalProvider>
+        <MainLayout>
+          <AnimatePresence mode="wait" initial={false}>
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <PageWrapper>
+                    <Home />
+                  </PageWrapper>
+                }
+              />
+              {/* Catch-all redirect to Home */}
+              <Route path="*" element={<PageWrapper><NotFound /></PageWrapper>} />
+            </Routes>
+          </AnimatePresence>
+        </MainLayout>
+      </ModalProvider>
     </BrowserRouter>
   );
 };

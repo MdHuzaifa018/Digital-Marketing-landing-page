@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
+import EnrollModal from '../components/ui/EnrollModal';
 import Lenis from 'lenis';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -54,10 +55,11 @@ const MainLayout = ({ children }) => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main id="main-content" className="flex-1" role="main">
+      <main className="flex-grow pt-[var(--navbar-h)] relative z-10" id="main-content">
         {children}
       </main>
       <Footer />
+      <EnrollModal />
     </div>
   );
 };

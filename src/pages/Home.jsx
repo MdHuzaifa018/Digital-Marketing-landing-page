@@ -11,7 +11,6 @@ import GallerySection from '../components/sections/GallerySection';
 import WhyUsPreview from '../components/sections/WhyUsPreview';
 import Testimonials from '../components/sections/Testimonials';
 import FAQPreview from '../components/sections/FAQPreview';
-import EnrollFormSection from '../components/sections/EnrollFormSection';
 import ContactSection from '../components/sections/ContactSection';
 import SEO from '../components/common/SEO';
 import { motion } from 'framer-motion';
@@ -31,6 +30,31 @@ const Home = () => {
         end: 'bottom 50%',
         onEnter: () => gsap.to('body', { backgroundColor: section.dataset.color, duration: 0.8, ease: 'power2.out', overwrite: 'auto' }),
         onEnterBack: () => gsap.to('body', { backgroundColor: section.dataset.color, duration: 0.8, ease: 'power2.out', overwrite: 'auto' }),
+      });
+    });
+
+    // 2. High-performance Smooth Reveal for generic elements
+    ScrollTrigger.batch('.gsap-reveal', {
+      interval: 0.1,
+      batchMax: 3,
+      onEnter: (elements) => gsap.to(elements, { autoAlpha: 1, y: 0, stagger: 0.15, duration: 0.8, ease: 'power3.out', overwrite: true }),
+      onLeaveBack: (elements) => gsap.set(elements, { autoAlpha: 0, y: 30, overwrite: true })
+    });
+    // Set initial state for reveals
+    gsap.set('.gsap-reveal', { autoAlpha: 0, y: 30 });
+
+    // 3. Text color fill animation on scroll (Scrubbing effect)
+    const scrubTexts = gsap.utils.toArray('.gsap-scrub-text');
+    scrubTexts.forEach((text) => {
+      gsap.to(text, {
+        backgroundPositionX: '0%',
+        ease: 'none',
+        scrollTrigger: {
+          trigger: text,
+          scrub: 1, // smooth scrubbing
+          start: 'top 80%',
+          end: 'bottom 40%',
+        }
       });
     });
 
@@ -77,10 +101,6 @@ const Home = () => {
         <FAQPreview />
       </div>
 
-      <div data-color="#f1f5f9"> {/* Tailwind slate-100 */}
-        <EnrollFormSection />
-      </div>
-
       <div data-color="#ffffff">
         <ContactSection />
       </div>
@@ -94,7 +114,7 @@ const WhyDigitalMarketing = () => {
       <div className="container-custom">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="eyebrow">The Career Opportunity</span>
-          <h2 id="why-dm-heading" className="text-display mt-4 mb-4">
+          <h2 id="why-dm-heading" className="text-display mt-4 mb-4 gsap-scrub-text">
             Why Digital Marketing?
           </h2>
           <p className="text-[var(--color-text-muted)] text-subheading">
@@ -109,7 +129,7 @@ const WhyDigitalMarketing = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bento-card lg:col-span-2 bg-black text-white p-8 md:p-12 flex flex-col justify-between overflow-hidden relative border-2 border-black shadow-[6px_6px_0px_#000000]"
+            className="bento-card gsap-reveal lg:col-span-2 bg-black text-white p-8 md:p-12 flex flex-col justify-between overflow-hidden relative border-2 border-black shadow-[6px_6px_0px_#000000]"
           >
             <div className="relative z-10 max-w-md">
               <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-6 border border-white/20">
@@ -128,7 +148,7 @@ const WhyDigitalMarketing = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="bento-card bg-white text-black p-8 md:p-10 flex flex-col justify-between border-2 border-black shadow-[6px_6px_0px_#000000]"
+            className="bento-card gsap-reveal bg-white text-black p-8 md:p-10 flex flex-col justify-between border-2 border-black shadow-[6px_6px_0px_#000000]"
           >
             <div>
               <div className="text-5xl lg:text-6xl font-heading mb-4 text-[var(--color-primary)]">5L+</div>
@@ -144,7 +164,7 @@ const WhyDigitalMarketing = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="bento-card bg-white text-black p-8 md:p-10 border-2 border-black shadow-[6px_6px_0px_#000000]"
+            className="bento-card gsap-reveal bg-white text-black p-8 md:p-10 border-2 border-black shadow-[6px_6px_0px_#000000]"
           >
             <Globe2 size={36} className="text-[var(--color-primary)] mb-6" />
             <h3 className="text-xl font-900 text-black mb-2">Freelance Potential</h3>
@@ -159,7 +179,7 @@ const WhyDigitalMarketing = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="bento-card lg:col-span-2 p-8 md:p-10 bg-[var(--color-primary)] text-white border-2 border-black shadow-[6px_6px_0px_#000000]"
+            className="bento-card gsap-reveal lg:col-span-2 p-8 md:p-10 bg-[var(--color-primary)] text-white border-2 border-black shadow-[6px_6px_0px_#000000]"
           >
             <h3 className="text-2xl md:text-3xl font-900 text-white mb-4 font-heading tracking-wide">Start your own agency.</h3>
             <p className="text-white text-lg max-w-lg font-500 leading-relaxed">
@@ -203,7 +223,7 @@ const LearningMethodology = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bento-card bg-white text-black p-8 border-2 border-black shadow-[4px_4px_0px_#000000] group"
+                className="bento-card gsap-reveal bg-white text-black p-8 border-2 border-black shadow-[4px_4px_0px_#000000] group"
               >
                 <div className="flex items-center justify-between mb-8">
                   <div className="w-12 h-12 rounded-2xl bg-[var(--color-secondary)] border-2 border-black text-black flex items-center justify-center font-bold shadow-[2px_2px_0px_#000]">

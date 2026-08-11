@@ -6,6 +6,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 import { BRAND, WHATSAPP_URL, DEFAULT_WHATSAPP_MESSAGE } from '../../config/contact';
 import { NAV_LINKS } from '../../data/navigation';
 import { COURSES } from '../../data/courses';
+import { useModal } from '../../context/ModalContext';
 
 const COURSE_ICONS = {
   'digital-marketing-mastery': <Sparkles size={18} className="text-indigo-600" />,
@@ -22,6 +23,7 @@ const Navbar = () => {
   const location = useLocation();
   const dropdownRef = useRef(null);
   const hoverTimeoutRef = useRef(null);
+  const { openModal } = useModal();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 15);
@@ -117,9 +119,9 @@ const Navbar = () => {
               <FaWhatsapp size={18} className="text-[#22C55E] flex-shrink-0" />
               <span className="hidden sm:inline">WhatsApp</span>
             </a>
-            <a href="#enroll" className="btn btn-primary btn-sm font-heading tracking-wide uppercase shadow-[4px_4px_0px_#000] hover:shadow-[2px_2px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] border-2 border-black rounded-xl" id="navbar-enroll-cta">
+            <button onClick={() => openModal()} className="btn btn-primary btn-sm font-heading tracking-wide uppercase shadow-[4px_4px_0px_#000] hover:shadow-[2px_2px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] border-2 border-black rounded-xl" id="navbar-enroll-cta">
               Enroll Now
-            </a>
+            </button>
           </div>
         </div>
       </header>

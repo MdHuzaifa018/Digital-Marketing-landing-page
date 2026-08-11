@@ -8,21 +8,14 @@ const SectionHeading = ({
   dark = false,
   className = '',
   animate = true,
+  id = '',
 }) => {
   const alignClass = align === 'center' ? 'text-center items-center' : align === 'right' ? 'text-right items-end' : 'text-left items-start';
 
-  const Wrapper = animate ? motion.div : 'div';
-  const wrapperProps = animate
-    ? {
-        initial: { opacity: 0, y: 24 },
-        whileInView: { opacity: 1, y: 0 },
-        viewport: { once: true, margin: '-60px' },
-        transition: { duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] },
-      }
-    : {};
+  const animateClass = animate ? 'gsap-reveal' : '';
 
   return (
-    <Wrapper className={`flex flex-col gap-3 ${alignClass} ${className}`} {...wrapperProps}>
+    <div id={id} className={`flex flex-col gap-3 ${alignClass} ${animateClass} ${className}`}>
       {eyebrow && (
         <span
           className="eyebrow uppercase font-heading tracking-widest text-sm"
@@ -53,7 +46,7 @@ const SectionHeading = ({
           {subtitle}
         </p>
       )}
-    </Wrapper>
+    </div>
   );
 };
 
