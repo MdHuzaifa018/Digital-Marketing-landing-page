@@ -17,11 +17,12 @@ const CoursePreview = () => {
       <Container>
         <div className="mb-12 md:mb-16 flex flex-col items-center text-center max-w-3xl mx-auto">
           <SectionHeading
-            eyebrow="Flagship Practical Program"
-            title="Master Digital Marketing"
-            subtitle="Complete practical offline training program in Lucknow — real tools, live campaigns, 1-on-1 mentorship, and job readiness."
+            eyebrow="Flagship Program"
+            title="Digital Marketing Mastery"
+            subtitle="The only course you need to launch a high-paying career or scale your own business. 100% practical, offline training."
             align="center"
             id="courses-preview-heading"
+            spotlight={true}
           />
         </div>
 

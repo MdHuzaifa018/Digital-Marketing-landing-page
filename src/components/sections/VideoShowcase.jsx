@@ -49,11 +49,12 @@ const VideoShowcase = () => {
         {/* Section Header */}
         <div className="mb-12 md:mb-16 flex flex-col items-center text-center max-w-3xl mx-auto">
           <SectionHeading
-            eyebrow="Real Classroom Experience"
-            title="Watch Us In Action"
-            subtitle="Take a visual tour of our offline Lucknow campus, see live campaign setups, and hear real student reviews."
+            eyebrow="Practical Focus"
+            title="See How We Teach."
+            subtitle="Take a sneak peek into our live classroom sessions where you build actual campaigns."
             align="center"
-            id="video-section-heading"
+            id="video-heading"
+            spotlight={true}
           />
         </div>
 

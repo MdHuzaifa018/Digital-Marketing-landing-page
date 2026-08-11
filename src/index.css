@@ -95,6 +95,30 @@
   color: transparent;
 }
 
+/* Spotlight Text Animation */
+.text-spotlight {
+  background: linear-gradient(
+    to right,
+    var(--color-primary) 0%,
+    var(--color-secondary) 25%,
+    var(--color-active-red) 50%,
+    var(--color-secondary) 75%,
+    var(--color-primary) 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
 /* ============================================
    BASE RESET & GLOBAL TYPOGRAPHY
    ============================================ */

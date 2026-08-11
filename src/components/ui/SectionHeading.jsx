@@ -8,6 +8,7 @@ const SectionHeading = ({
   dark = false,
   className = '',
   animate = true,
+  spotlight = false,
   id = '',
 }) => {
   const alignClass = align === 'center' ? 'text-center items-center' : align === 'right' ? 'text-right items-end' : 'text-left items-start';
@@ -34,7 +35,11 @@ const SectionHeading = ({
           {eyebrow}
         </span>
       )}
-      <h2 className={`font-heading font-900 text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-wider uppercase ${align === 'center' ? 'text-center' : ''} ${dark ? 'text-white' : 'text-black'}`}>
+      <h2
+        className={`font-heading font-900 text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-wider uppercase ${align === 'center' ? 'text-center' : ''} ${
+          dark ? 'text-white' : 'text-black'
+        } ${spotlight ? 'text-spotlight' : ''}`}
+      >
         {title}
       </h2>
       {subtitle && (
