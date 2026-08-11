@@ -141,14 +141,14 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="relative hidden lg:block"
+            className="relative w-full mt-4 lg:mt-0"
           >
             <motion.img 
               animate={{ y: [-5, 5, -5] }}
               transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
               src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop" 
               alt="Digital Marketing Classroom" 
-              className="w-full h-[500px] object-cover rounded-3xl border-4 border-black shadow-[12px_12px_0px_#000000]"
+              className="w-full h-[280px] sm:h-[400px] lg:h-[500px] object-cover rounded-3xl border-4 border-black shadow-[8px_8px_0px_#000000] lg:shadow-[12px_12px_0px_#000000]"
             />
           </motion.div>
 
