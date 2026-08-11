@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import EnrollModal from '../components/ui/EnrollModal';
+import UrgencyPopup from '../components/ui/UrgencyPopup';
 import Lenis from 'lenis';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -60,6 +61,7 @@ const MainLayout = ({ children }) => {
       </main>
       <Footer />
       <EnrollModal />
+      <UrgencyPopup />
     </div>
   );
 };
