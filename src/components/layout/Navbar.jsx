@@ -78,7 +78,7 @@ const Navbar = () => {
 
       <header
         className={`fixed left-0 right-0 z-50 transition-all duration-500 flex justify-center px-4 pointer-events-none ${
-          location.pathname === '/' ? 'top-12' : 'top-6'
+          location.pathname === '/' ? 'top-2' : 'top-2'
         }`}
         role="banner"
       >

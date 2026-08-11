@@ -125,9 +125,45 @@ const Footer = () => {
               <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link to="/terms-and-conditions" className="hover:text-white transition-colors">Terms & Conditions</Link>
             </div>
-            <p>
-              © {new Date().getFullYear()} {BRAND.name}. All rights reserved. <span className="mx-2 hidden sm:inline">|</span> <br className="sm:hidden" /> Designed in Lucknow.
+            <p className="mt-2 text-slate-500">
+              © {new Date().getFullYear()} {BRAND.name}. All rights reserved.
             </p>
+            
+            <div className="flex flex-col items-center mt-6 pt-6 border-t border-white/5 w-full max-w-md mx-auto">
+              <p className="flex items-center gap-1.5 text-[0.95rem] text-slate-400">
+                Made with <span className="text-red-500 text-lg animate-pulse mx-0.5">❤️</span> by <span className="font-800 text-white tracking-wide">Huzaif Sheikh</span>
+              </p>
+              
+              <div className="flex items-center gap-3 mt-4">
+                <a 
+                  href="https://wa.me/919999999999" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label="WhatsApp"
+                  className="w-9 h-9 rounded-full border border-white/10 bg-white/5 hover:bg-green-500 hover:border-green-500 hover:text-white flex items-center justify-center transition-all duration-300 group"
+                >
+                  <FaWhatsapp size={16} className="text-slate-400 group-hover:text-white transition-colors" />
+                </a>
+                <a 
+                  href="https://linkedin.com/in/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label="LinkedIn"
+                  className="w-9 h-9 rounded-full border border-white/10 bg-white/5 hover:bg-[#0A66C2] hover:border-[#0A66C2] hover:text-white flex items-center justify-center transition-all duration-300 group"
+                >
+                  <FaLinkedinIn size={16} className="text-slate-400 group-hover:text-white transition-colors" />
+                </a>
+                <a 
+                  href="https://github.com/MdHuzaifa018" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  aria-label="Portfolio"
+                  className="w-9 h-9 rounded-full border border-white/10 bg-white/5 hover:bg-[var(--color-primary)] hover:border-[var(--color-primary)] hover:text-white flex items-center justify-center transition-all duration-300 group"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-slate-400 group-hover:text-white transition-colors"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                </a>
+              </div>
+            </div>
           </div>
         </Container>
       </div>

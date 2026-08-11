@@ -207,7 +207,7 @@ const LearningMethodology = () => {
           
           <div className="lg:col-span-4">
             <span className="eyebrow mb-6 inline-block">Methodology</span>
-            <h2 id="methodology-heading" className="text-display mb-6">
+            <h2 id="methodology-heading" className="text-display mb-6 gsap-scrub-text">
               A practical approach to learning.
             </h2>
             <p className="text-slate-700 font-500 text-subheading mb-8">
