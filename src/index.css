@@ -1,0 +1,397 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors - Not Your College (NYC) Theme */
+  --color-bg: #FFFFFF;
+  --color-bg-secondary: #f0f3ff; /* NYC Light Blue Tint */
+  --color-bg-alt: #E2E8F0;
+  --color-bg-dark: #000000;
+  
+  --color-text: #000000;
+  --color-text-muted: #333333;
+  --color-text-light: #666666;
+  
+  --color-border: #E2E8F0;
+  --color-border-dark: #334155;
+
+  /* NYC Brutalist Palette */
+  --color-primary: #0038ff;
+  --color-primary-dark: #002ac0;
+  --color-primary-light: #4d75ff;
+  --color-secondary: #fff600; /* NYC Yellow */
+  --color-active-red: #ef5442; /* NYC Red */
+  
+  /* Font weights */
+  --font-weight-400: 400;
+  --font-weight-500: 500;
+  --font-weight-600: 600;
+  --font-weight-700: 700;
+  --font-weight-800: 800;
+  --font-weight-900: 900;
+
+  --font-sans: 'Poppins', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-heading: 'Staatliches', var(--font-sans);
+}
+
+:root {
+  /* Layout Constants */
+  --navbar-h: 76px;
+  --container-max: 1280px;
+  --container-narrow-max: 920px;
+  --container-px: clamp(1.25rem, 5vw, 2.5rem);
+  --section-py: clamp(5rem, 10vw, 9rem);
+  
+  /* Shadows - Extremely subtle, sharp shadow for Stark Modern */
+  --shadow-bento: 0 4px 24px rgba(0,0,0,0.03), 0 1px 2px rgba(0,0,0,0.02);
+  --shadow-bento-hover: 0 12px 32px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.04);
+  
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-base: 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.container-custom {
+  width: 100%;
+  max-width: var(--container-max, 1280px);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-px, 1.5rem);
+  padding-right: var(--container-px, 1.5rem);
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: var(--container-narrow-max, 920px);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-px, 1.5rem);
+  padding-right: var(--container-px, 1.5rem);
+}
+
+/* ============================================
+   BASE RESET & GLOBAL TYPOGRAPHY
+   ============================================ */
+html, body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
+}
+
+.text-hero {
+  font-size: clamp(3.2rem, 7vw, 7.5rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+}
+
+.text-display {
+  font-size: clamp(2.25rem, 4.5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+}
+
+.text-heading {
+  font-size: clamp(1.5rem, 2.5vw, 2.75rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+}
+
+.text-subheading {
+  font-size: clamp(1.1rem, 1.4vw, 1.35rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+.text-gradient {
+  background: linear-gradient(120deg, #111111 0%, #666666 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-primary {
+  background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-secondary {
+  background: linear-gradient(135deg, #EC4899 0%, #F59E0B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-gradient-premium {
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+  color: white;
+}
+
+.bg-gradient-vibrant {
+  background: linear-gradient(135deg, #4f46e5 0%, #db2777 100%);
+  color: white;
+}
+
+/* ============================================
+   LAYOUT CONTAINERS
+   ============================================ */
+.container-custom {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-px);
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: var(--container-narrow-max);
+  margin-inline: auto;
+  padding-inline: var(--container-px);
+}
+
+.section-py { padding-block: var(--section-py); }
+
+.page-top {
+  padding-top: calc(var(--navbar-h) + 4rem);
+  padding-bottom: var(--section-py);
+}
+
+.page-hero-bg {
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* ============================================
+   BENTO GRID SYSTEM
+   ============================================ */
+.bento-card {
+  border: 2px solid var(--color-black, #000);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 4px 4px 0px #000000;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.bento-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: var(--shadow-bento-hover);
+}
+
+.bento-glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* ============================================
+   COMPONENTS
+   ============================================ */
+
+/* Badges */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  padding: 0.4rem 1rem;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+}
+
+/* Buttons - NYC Brutalist */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.8rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  border: 2px solid var(--color-black, #000);
+  box-shadow: 3px 3px 0px var(--color-black, #000);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px 0px var(--color-black, #000);
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-dark);
+}
+
+.btn-secondary {
+  background: var(--color-secondary);
+  color: #000000;
+}
+
+.btn-secondary:hover {
+  background: #f0e600;
+}
+
+.btn-lg {
+  padding: 1rem 2.5rem;
+  font-size: 1.05rem;
+}
+
+/* Forms */
+.form-input {
+  width: 100%;
+  height: 56px;
+  padding: 0 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--color-text);
+  background: var(--color-bg-secondary);
+  transition: all var(--transition-fast);
+  outline: none;
+}
+.form-input:focus {
+  background: var(--color-bg);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(0,0,0,0.05);
+}
+
+/* Navbar Links */
+.nav-item-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+.nav-item-link:hover, .nav-item-link.active {
+  color: var(--color-text);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-wrapper {
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+}
+.marquee-track {
+  display: flex;
+  flex-shrink: 0;
+  width: max-content;
+  align-items: center;
+  gap: 2.5rem;
+  animation: marquee-scroll 35s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+.marquee-track-reverse {
+  animation-direction: reverse;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================
+   NAVBAR ANIMATIONS
+   ============================================ */
+.nav-item-link {
+  position: relative;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color var(--transition-fast);
+}
+
+.nav-item-link:hover,
+.nav-item-link.active {
+  color: var(--color-text);
+}
+
+.nav-item-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0.1rem;
+  left: 0.75rem;
+  right: 0.75rem;
+  height: 2px;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.nav-item-link:hover::after,
+.nav-item-link.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
