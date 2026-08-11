@@ -69,9 +69,9 @@ const Hero = () => {
             </motion.div>
 
             {/* Main Headline */}
-            <motion.h1 variants={item} className="text-hero leading-[1.05] max-w-[850px] text-[var(--color-primary)] font-heading uppercase gsap-scrub-text">
-              Learn{' '}
-              <span className="relative inline-block align-bottom min-w-[200px] sm:min-w-[240px] md:min-w-[320px] h-[1.3em]" aria-live="polite">
+            <motion.h1 variants={item} className="text-hero leading-[1.1] max-w-[850px] text-[var(--color-primary)] font-heading uppercase gsap-scrub-text flex flex-col sm:block">
+              <span>Learn </span>
+              <span className="relative inline-block align-bottom min-w-[220px] sm:min-w-[240px] md:min-w-[320px] h-[1.3em] mt-2 sm:mt-0 ml-1 sm:ml-2" aria-live="polite">
                 <AnimatePresence mode="popLayout">
                   <motion.span
                     key={wordIndex}
@@ -79,15 +79,15 @@ const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -24 }}
                     transition={{ duration: 0.3, ease: 'easeOut' }}
-                    className="inline-block bg-[var(--color-secondary)] text-black px-4 py-1 border-2 border-black -skew-x-6 whitespace-nowrap shadow-[3px_3px_0px_#000000]"
+                    className="inline-block bg-[var(--color-secondary)] text-black px-3 sm:px-4 py-1 border-2 border-black -skew-x-6 whitespace-nowrap shadow-[3px_3px_0px_#000000]"
                     style={{ WebkitTextFillColor: 'initial', color: 'black' }}
                   >
                     {CYCLING_WORDS[wordIndex]}
                   </motion.span>
                 </AnimatePresence>
               </span>
-              <br />
-              Build Real Skills.
+              <br className="hidden sm:block" />
+              <span className="mt-2 sm:mt-0 inline-block">Build Real Skills.</span>
             </motion.h1>
 
             {/* Subtitle */}
