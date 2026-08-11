@@ -68,9 +68,9 @@ const Navbar = () => {
     <>
       {/* Top Announcement Bar (Home page only) */}
       {location.pathname === '/' && (
-        <div className="bg-black text-white text-center py-2 px-4 text-xs font-600 flex items-center justify-center gap-2">
+        <div className="bg-black text-white text-center py-2 px-2 text-xs font-600 flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 min-h-[48px] sm:min-h-[40px]">
           <span>🎓 New batch starting soon in Lucknow —</span>
-          <button onClick={() => openModal()} className="underline font-700 text-white hover:text-white/80 transition-colors">
+          <button onClick={() => openModal()} className="underline font-700 text-white hover:text-[var(--color-secondary)] transition-colors">
             Reserve your seat now →
           </button>
         </div>
@@ -78,7 +78,7 @@ const Navbar = () => {
 
       <header
         className={`fixed left-0 right-0 z-50 transition-all duration-500 flex justify-center px-4 pointer-events-none ${
-          location.pathname === '/' ? 'top-2' : 'top-2'
+          location.pathname === '/' && !scrolled ? 'top-[52px] sm:top-[44px]' : 'top-2'
         }`}
         role="banner"
       >
