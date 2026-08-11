@@ -119,6 +119,28 @@
   }
 }
 
+/* Swiper Custom Pagination */
+.custom-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.swiper-custom-bullet {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  border: 2px solid black;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.swiper-custom-bullet-active {
+  width: 32px;
+  border-radius: 9999px;
+  background: var(--color-primary);
+}
+
 /* ============================================
    BASE RESET & GLOBAL TYPOGRAPHY
    ============================================ */
