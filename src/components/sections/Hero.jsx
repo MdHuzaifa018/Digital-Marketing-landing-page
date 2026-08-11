@@ -69,9 +69,9 @@ const Hero = () => {
             </motion.div>
 
             {/* Main Headline */}
-            <motion.h1 variants={item} className="text-hero leading-[1.1] max-w-[850px] text-[var(--color-primary)] font-heading uppercase gsap-scrub-text flex flex-col sm:block">
+            <motion.h1 variants={item} className="text-hero leading-[1.1] max-w-[850px] text-[var(--color-primary)] font-heading uppercase gsap-scrub-text flex flex-col sm:block w-full">
               <span>Learn </span>
-              <span className="relative inline-block align-bottom min-w-[220px] sm:min-w-[240px] md:min-w-[320px] h-[1.3em] mt-2 sm:mt-0 ml-1 sm:ml-2" aria-live="polite">
+              <span className="relative inline-block sm:align-bottom w-auto sm:min-w-[240px] md:min-w-[320px] h-[1.3em] mt-2 sm:mt-0 sm:ml-2 max-w-full" aria-live="polite">
                 <AnimatePresence mode="popLayout">
                   <motion.span
                     key={wordIndex}
@@ -79,7 +79,7 @@ const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -24 }}
                     transition={{ duration: 0.3, ease: 'easeOut' }}
-                    className="inline-block bg-[var(--color-secondary)] text-black px-3 sm:px-4 py-1 border-2 border-black -skew-x-6 whitespace-nowrap shadow-[3px_3px_0px_#000000]"
+                    className="inline-block bg-[var(--color-secondary)] text-black px-2 sm:px-4 py-1 border-2 border-black -skew-x-6 whitespace-nowrap shadow-[3px_3px_0px_#000000] max-w-full overflow-hidden text-ellipsis"
                     style={{ WebkitTextFillColor: 'initial', color: 'black' }}
                   >
                     {CYCLING_WORDS[wordIndex]}
@@ -87,7 +87,7 @@ const Hero = () => {
                 </AnimatePresence>
               </span>
               <br className="hidden sm:block" />
-              <span className="mt-2 sm:mt-0 inline-block">Build Real Skills.</span>
+              <span className="mt-2 sm:mt-0 inline-block w-full">Build Real Skills.</span>
             </motion.h1>
 
             {/* Subtitle */}
@@ -96,22 +96,22 @@ const Hero = () => {
             </motion.p>
 
             {/* Feature Checkmarks */}
-            <motion.div variants={item} className="flex flex-wrap gap-3 sm:gap-4 mt-4">
+            <motion.div variants={item} className="flex flex-wrap gap-2 sm:gap-4 mt-4 w-full">
               {['100% Practical', 'Small Batch Sizes', 'Live Ad Campaigns'].map((feat) => (
-                <span key={feat} className="inline-flex items-center gap-2.5 bg-white px-5 py-3 rounded-lg border-2 border-black shadow-[3px_3px_0px_#000000] text-black text-sm sm:text-base font-900 uppercase tracking-wide">
-                  <CheckCircle2 size={20} className="text-[var(--color-primary)] flex-shrink-0" /> {feat}
+                <span key={feat} className="inline-flex items-center gap-1.5 sm:gap-2.5 bg-white px-3 sm:px-5 py-2 sm:py-3 rounded-lg border-2 border-black shadow-[2px_2px_0px_#000000] sm:shadow-[3px_3px_0px_#000000] text-black text-[0.65rem] sm:text-base font-900 uppercase tracking-wide">
+                  <CheckCircle2 size={16} className="text-[var(--color-primary)] flex-shrink-0 sm:w-5 sm:h-5" /> {feat}
                 </span>
               ))}
             </motion.div>
 
             {/* CTAs */}
-            <motion.div variants={item} className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4 mt-6">
-              <div className="flex gap-4">
-                <button onClick={() => openModal()} className="btn btn-primary btn-lg">
+            <motion.div variants={item} className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4 mt-6 w-full">
+              <div className="flex flex-wrap gap-3 sm:gap-4 w-full sm:w-auto">
+                <button onClick={() => openModal()} className="btn btn-primary btn-lg flex-1 sm:flex-none justify-center">
                   <span>Enroll Now</span>
                   <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                 </button>
-                <a href="#contact" className="btn btn-secondary btn-lg hidden sm:inline-flex">
+                <a href="#contact" className="btn btn-secondary btn-lg flex-1 sm:flex-none justify-center">
                   Contact Us
                 </a>
               </div>
