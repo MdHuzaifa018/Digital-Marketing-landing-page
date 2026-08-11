@@ -154,7 +154,7 @@ const Footer = () => {
                   <FaLinkedinIn size={16} className="text-slate-400 group-hover:text-white transition-colors" />
                 </a>
                 <a 
-                  href="https://github.com/MdHuzaifa018" 
+                  href="https://latest-portfolio-huzaif-sheikh.vercel.app/" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   aria-label="Portfolio"
