@@ -21,6 +21,13 @@ export const COURSES = [
     badgeType: 'accent',
     image: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=1200&auto=format&fit=crop',
     tools: ['Google Ads', 'Meta Ads Manager', 'SEMrush', 'Google Analytics 4', 'Canva', 'WordPress', 'ChatGPT', 'Mailchimp'],
+    features: [
+      '100% Practical Training',
+      'Live Budget Ad Campaigns',
+      'Work on Real Clients',
+      '1-on-1 Mentorship',
+    ],
+    isFastFilling: true,
     outcomes: [
       'Run profitable Google & Meta Ads campaigns',
       'Rank websites organically on Google Search',

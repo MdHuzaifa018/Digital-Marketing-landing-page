@@ -136,7 +136,7 @@ const Footer = () => {
               
               <div className="flex items-center gap-3 mt-4">
                 <a 
-                  href="https://wa.me/919999999999" 
+                  href="https://wa.me/8434890116" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   aria-label="WhatsApp"
@@ -145,7 +145,7 @@ const Footer = () => {
                   <FaWhatsapp size={16} className="text-slate-400 group-hover:text-white transition-colors" />
                 </a>
                 <a 
-                  href="https://linkedin.com/in/" 
+                  href="https://www.linkedin.com/in/huzaif-sheikh-6443a6330/" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   aria-label="LinkedIn"

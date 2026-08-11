@@ -105,14 +105,25 @@ const Hero = () => {
             </motion.div>
 
             {/* CTAs */}
-            <motion.div variants={item} className="flex flex-wrap items-center gap-4 mt-6">
-              <button onClick={() => openModal()} className="btn btn-primary btn-lg">
-                <span>Enroll Now</span>
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </button>
-              <a href="#contact" className="btn btn-secondary btn-lg">
-                Contact Us
-              </a>
+            <motion.div variants={item} className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4 mt-6">
+              <div className="flex gap-4">
+                <button onClick={() => openModal()} className="btn btn-primary btn-lg">
+                  <span>Enroll Now</span>
+                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                </button>
+                <a href="#contact" className="btn btn-secondary btn-lg hidden sm:inline-flex">
+                  Contact Us
+                </a>
+              </div>
+              
+              {/* Urgency Badge */}
+              <div className="flex items-center gap-2 mt-2 sm:mt-0 bg-red-50 text-red-600 px-3 py-1.5 rounded-lg border border-red-200">
+                <span className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                </span>
+                <span className="text-xs font-800 uppercase tracking-wide">Special Offer: Limited Seats Left</span>
+              </div>
               <a
                 href={WHATSAPP_URL(whatsappMsg)}
                 target="_blank"

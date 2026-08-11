@@ -78,6 +78,17 @@ Experience: ${data.experience}`;
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             className="relative w-full max-w-2xl bg-white rounded-3xl border-3 border-black shadow-[12px_12px_0px_#000000] overflow-hidden flex flex-col max-h-[90vh]"
           >
+            {/* Urgency Banner */}
+            <div className="bg-[var(--color-secondary)]/20 border-b-2 border-black p-3 flex items-center justify-center gap-2">
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+              </span>
+              <p className="text-xs sm:text-sm font-800 text-black uppercase tracking-wide">
+                Hurry! Only <span className="text-[var(--color-primary)]">3 Seats Left</span> in the Upcoming Batch
+              </p>
+            </div>
+
             {/* Header */}
             <div className="flex items-center justify-between p-6 border-b-2 border-black bg-[var(--color-bg-secondary)]">
               <div>

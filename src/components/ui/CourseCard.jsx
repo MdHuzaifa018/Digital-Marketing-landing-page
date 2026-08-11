@@ -12,14 +12,21 @@ const CourseCard = ({ course, index = 0 }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-      className="w-full max-w-5xl mx-auto bg-white border-3 border-black rounded-3xl shadow-[8px_8px_0px_#000000] p-6 sm:p-10 lg:p-12 flex flex-col gap-8 my-4"
+      className="w-full max-w-5xl mx-auto bg-white border-3 border-black rounded-3xl shadow-[8px_8px_0px_#000000] p-6 sm:p-10 lg:p-12 flex flex-col gap-8 my-4 relative"
     >
       {/* Top Header Pill Row */}
       <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b-2 border-slate-200">
-        <span className="inline-flex items-center gap-2 px-4 py-2 text-xs sm:text-sm font-900 bg-[var(--color-secondary)] text-black border-2 border-black uppercase tracking-wider shadow-[2px_2px_0px_#000000] rounded-lg font-heading">
-          <Sparkles size={16} />
-          {course.badge || 'FLAGSHIP PRACTICAL PROGRAM'}
-        </span>
+        <div className="flex flex-wrap items-center gap-3">
+          <span className="inline-flex items-center gap-2 px-4 py-2 text-xs sm:text-sm font-900 bg-[var(--color-secondary)] text-black border-2 border-black uppercase tracking-wider shadow-[2px_2px_0px_#000000] rounded-lg font-heading">
+            <Sparkles size={16} />
+            {course.badge || 'FLAGSHIP PRACTICAL PROGRAM'}
+          </span>
+          {course.isFastFilling && (
+            <span className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-900 bg-red-100 text-red-600 border-2 border-red-200 rounded-lg uppercase animate-pulse">
+              Fast Filling
+            </span>
+          )}
+        </div>
         
         <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm font-900 text-black">
           <span className="inline-flex items-center gap-1.5 bg-slate-100 px-4 py-2 rounded-xl border-2 border-black">
