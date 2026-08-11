@@ -2,8 +2,8 @@
 // Update these values when client confirms details
 
 export const CONTACT = {
-  whatsapp: '919999999999', // Replace with actual WhatsApp number (country code + number)
-  phone: '+91 99999 99999',
+  whatsapp: '917905848463', // Client's WhatsApp number (country code + number)
+  phone: '+91 79058 48463',
   email: 'hello@skilledgedigital.in',
   address: 'Lucknow, Uttar Pradesh, India', // Replace with full address
   mapEmbed: '', // Replace with Google Maps embed URL
@@ -23,7 +23,7 @@ export const SOCIAL = {
   facebook: 'https://facebook.com/',
   youtube: 'https://youtube.com/',
   linkedin: 'https://linkedin.com/',
-  whatsapp: `https://wa.me/919999999999`,
+  whatsapp: `https://wa.me/917905848463`,
 };
 
 export const WHATSAPP_URL = (message) =>
