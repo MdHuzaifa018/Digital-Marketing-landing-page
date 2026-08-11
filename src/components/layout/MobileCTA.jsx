@@ -1,9 +1,10 @@
-import { Link } from 'react-router-dom';
 import { FaWhatsapp } from 'react-icons/fa';
 import { WHATSAPP_URL, DEFAULT_WHATSAPP_MESSAGE } from '../../config/contact';
+import { useModal } from '../../context/ModalContext';
 
 const MobileCTA = () => {
   const whatsappUrl = WHATSAPP_URL(DEFAULT_WHATSAPP_MESSAGE);
+  const { openModal } = useModal();
 
   return (
     <div
@@ -31,9 +32,9 @@ const MobileCTA = () => {
         >
           <FaWhatsapp size={17} />
         </a>
-        <Link to="/enroll" className="btn btn-primary btn-sm flex-shrink-0" id="mobile-cta-enroll">
+        <button onClick={() => openModal()} className="btn btn-primary btn-sm flex-shrink-0" id="mobile-cta-enroll">
           Enroll Now
-        </Link>
+        </button>
       </div>
     </div>
   );

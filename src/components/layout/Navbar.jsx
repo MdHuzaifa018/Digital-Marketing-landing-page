@@ -70,9 +70,9 @@ const Navbar = () => {
       {location.pathname === '/' && (
         <div className="bg-black text-white text-center py-2 px-4 text-xs font-600 flex items-center justify-center gap-2">
           <span>🎓 New batch starting soon in Lucknow —</span>
-          <Link to="/enroll" className="underline font-700 text-white hover:text-white/80 transition-colors">
+          <button onClick={() => openModal()} className="underline font-700 text-white hover:text-white/80 transition-colors">
             Reserve your seat now →
-          </Link>
+          </button>
         </div>
       )}
 

@@ -1,16 +1,12 @@
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
 import Container from '../ui/Container';
 import Accordion from '../ui/Accordion';
 import SectionHeading from '../ui/SectionHeading';
 import { FAQS } from '../../data/faq';
 
 const FAQPreview = () => {
-  const previewFaqs = FAQS.slice(0, 4);
-
   return (
-    <section className="section-py" aria-labelledby="faq-preview-heading">
+    <section id="faq" className="section-py" aria-labelledby="faq-heading">
       <Container narrow>
         <div className="text-center mb-12">
           <SectionHeading
@@ -18,7 +14,7 @@ const FAQPreview = () => {
             title="Common questions."
             subtitle="Quick answers to what students ask most before enrolling."
             align="center"
-            id="faq-preview-heading"
+            id="faq-heading"
           />
         </div>
 
@@ -28,17 +24,8 @@ const FAQPreview = () => {
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.5 }}
         >
-          <Accordion items={previewFaqs} />
+          <Accordion items={FAQS} />
         </motion.div>
-
-        <div className="text-center mt-10">
-          <Link
-            to="/faq"
-            className="inline-flex items-center gap-2 text-sm font-600 text-[var(--color-primary)] hover:gap-3 transition-all duration-200 no-underline"
-          >
-            View All FAQs <ArrowRight size={15} />
-          </Link>
-        </div>
       </Container>
     </section>
   );
