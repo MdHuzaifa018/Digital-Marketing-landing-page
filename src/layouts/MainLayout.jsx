@@ -4,6 +4,7 @@ import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import EnrollModal from '../components/ui/EnrollModal';
 import UrgencyPopup from '../components/ui/UrgencyPopup';
+import BackToTop from '../components/ui/BackToTop';
 import Lenis from 'lenis';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -51,17 +52,24 @@ const MainLayout = ({ children }) => {
     if (lenisRef.current) {
       lenisRef.current.scrollTo(0, { immediate: true });
     }
+    // Refresh ScrollTrigger after route change and scroll reset
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 100);
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow pt-[var(--navbar-h)] relative z-10" id="main-content">
         {children}
       </main>
       <Footer />
+      
+      {/* Global Modals & Popups */}
       <EnrollModal />
       <UrgencyPopup />
+      <BackToTop />
     </div>
   );
 };
