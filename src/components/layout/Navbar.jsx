@@ -97,9 +97,12 @@ const Navbar = () => {
             className="flex items-center gap-2.5 no-underline flex-shrink-0"
             aria-label={`${BRAND.name} — Home`}
           >
-            <div className="h-12 w-12 sm:h-14 sm:w-14 overflow-hidden flex-shrink-0 flex items-center justify-center rounded-full border border-slate-200 shadow-sm">
-              <img src="/logo.png" alt="Flybitfalcon Logo" className="h-full w-full object-contain bg-black" />
+            <div className="h-12 w-12 overflow-hidden flex-shrink-0 flex items-center justify-center rounded-full bg-black shadow-sm">
+              <img src="/logo.png" alt="Flybitfalcon Logo" className="h-full w-full object-contain" />
             </div>
+            <span className="font-800 text-[1.1rem] text-[var(--color-text)] tracking-tight hidden sm:block">
+              {BRAND.name}
+            </span>
           </Link>
 
           {/* ── Desktop CTAs (WhatsApp & Enroll Now) ── */}
