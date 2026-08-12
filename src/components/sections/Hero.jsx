@@ -92,7 +92,7 @@ const Hero = () => {
 
             {/* Subtitle */}
             <motion.div variants={item} className="text-subheading max-w-[550px] mt-2 font-500 text-slate-600 flex flex-col gap-2">
-              <p>At Flybit, you'll learn how digital marketing actually works inside a marketing agency. No boring theory.</p>
+              <p>At Flybitfalcon, you'll learn how digital marketing actually works inside a marketing agency. No boring theory.</p>
               <p className="font-700 text-[var(--color-primary)]">Your goal: Learn &rarr; Practice &rarr; Build Portfolio &rarr; Become Client-Ready</p>
             </motion.div>
 

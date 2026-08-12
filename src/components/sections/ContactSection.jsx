@@ -101,7 +101,7 @@ const ContactSection = () => {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Flybit location on Google Maps"
+                  title="Flybitfalcon location on Google Maps"
                 />
               ) : (
                 <div className="text-center text-slate-400 text-sm p-8 font-500">

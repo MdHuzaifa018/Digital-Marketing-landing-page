@@ -98,7 +98,7 @@ const Navbar = () => {
             aria-label={`${BRAND.name} — Home`}
           >
             <div className="h-10 w-8 overflow-hidden flex-shrink-0 flex items-center justify-start">
-              <img src="/logo.png" alt="Flybit Logo" className="h-full w-full object-cover object-left" />
+              <img src="/logo.png" alt="Flybitfalcon Logo" className="h-full w-full object-cover object-left" />
             </div>
             <span className="font-800 text-[1.05rem] text-[var(--color-text)] tracking-tight hidden sm:block">
               {BRAND.name}

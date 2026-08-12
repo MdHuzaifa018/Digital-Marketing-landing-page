@@ -74,7 +74,7 @@ const Testimonials = () => {
             <SectionHeading
               eyebrow="Student Success"
               title={<>Don't just take our<br />word for it.</>}
-              subtitle="Real experiences from students who transformed their careers with Flybit."
+              subtitle="Real experiences from students who transformed their careers with Flybitfalcon."
               align="left"
               id="testimonials-heading"
             />

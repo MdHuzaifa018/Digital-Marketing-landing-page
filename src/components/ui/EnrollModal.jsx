@@ -28,7 +28,7 @@ const EnrollModal = () => {
     setIsSubmitting(true);
     
     // Construct WhatsApp Message
-    const text = `Hello Flybit! I want to enroll in the ₹999 pre-enrollment.
+    const text = `Hello Flybitfalcon! I want to enroll in the ₹999 pre-enrollment.
 Name: ${data.fullName}
 Phone: ${data.phone}
 Email: ${data.email}

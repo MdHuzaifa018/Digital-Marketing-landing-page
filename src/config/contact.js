@@ -11,7 +11,7 @@ export const CONTACT = {
 };
 
 export const BRAND = {
-  name: 'Flybit',
+  name: 'Flybitfalcon',
   tagline: 'Digital Marketing Academy',
   shortTagline: 'Offline Digital Marketing Training in Lucknow',
   city: 'Lucknow',

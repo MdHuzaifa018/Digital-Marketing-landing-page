@@ -38,8 +38,8 @@ const WhyUsPreview = () => {
       <Container>
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
           <SectionHeading
-            eyebrow="Flybit Academy"
-            title={<>What makes Flybit<br />different.</>}
+            eyebrow="Flybitfalcon Academy"
+            title={<>What makes Flybitfalcon<br />different.</>}
             subtitle="Agency-style training with live projects and portfolio building."
             dark={false}
             align="left"
