@@ -100,8 +100,9 @@ const Navbar = () => {
             <div className="h-12 w-12 overflow-hidden flex-shrink-0 flex items-center justify-center rounded-full bg-black shadow-sm">
               <img src="/logo.png" alt="Flybitfalcon Logo" className="h-full w-full object-contain" />
             </div>
-            <span className="font-800 text-[1.1rem] text-[var(--color-text)] tracking-tight hidden sm:block">
-              {BRAND.name}
+            <span className="font-900 text-[1.2rem] tracking-tight hidden sm:block">
+              <span className="text-black">Flybit</span>
+              <span className="text-[#FFC107]">falcon</span>
             </span>
           </Link>
 
