@@ -5,8 +5,6 @@ import { FaWhatsapp } from 'react-icons/fa';
 import { WHATSAPP_URL } from '../../config/contact';
 import { useModal } from '../../context/ModalContext';
 
-const CYCLING_WORDS = ['Marketing.', 'SEO.', 'Google Ads.', 'Social Media.'];
-
 const whatsappMsg = "Hello! I'm interested in your Digital Marketing course in Lucknow. Please share details.";
 
 const stagger = {
@@ -20,15 +18,7 @@ const item = {
 };
 
 const Hero = () => {
-  const [wordIndex, setWordIndex] = useState(0);
   const { openModal } = useModal();
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setWordIndex((prev) => (prev + 1) % CYCLING_WORDS.length);
-    }, 2500);
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <section
@@ -70,11 +60,10 @@ const Hero = () => {
 
             {/* Main Headline */}
             <motion.h1 variants={item} className="text-hero leading-[1.1] max-w-[850px] text-[var(--color-primary)] font-heading uppercase gsap-scrub-text flex flex-col sm:block w-full">
-              <span>Learn </span>
+              <span>DON'T JUST </span>
               <span className="relative inline-block sm:align-bottom w-auto sm:min-w-[240px] md:min-w-[320px] h-[1.3em] mt-2 sm:mt-0 sm:ml-2 max-w-full" aria-live="polite">
                 <AnimatePresence mode="popLayout">
                   <motion.span
-                    key={wordIndex}
                     initial={{ opacity: 0, y: 24 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -24 }}
@@ -82,22 +71,22 @@ const Hero = () => {
                     className="inline-block bg-[var(--color-secondary)] text-black px-2 sm:px-4 py-1 border-2 border-black -skew-x-6 whitespace-nowrap shadow-[3px_3px_0px_#000000] max-w-full overflow-hidden text-ellipsis"
                     style={{ WebkitTextFillColor: 'initial', color: 'black' }}
                   >
-                    {CYCLING_WORDS[wordIndex]}
+                    LEARN
                   </motion.span>
                 </AnimatePresence>
               </span>
               <br className="hidden sm:block" />
-              <span className="mt-2 sm:mt-0 inline-block w-full">Build Real Skills.</span>
+              <span className="mt-2 sm:mt-0 inline-block w-full">IT. ACTUALLY DO IT.</span>
             </motion.h1>
 
             {/* Subtitle */}
             <motion.p variants={item} className="text-subheading max-w-[550px] mt-2 font-500 text-slate-600">
-              Master digital marketing through practical offline classroom training in Lucknow — real tools, live projects, personal mentorship, and job readiness.
+              At Grow Funda, you'll learn how digital marketing actually works inside a marketing agency. Learn Digital Marketing. Work on Live Projects. Build Your Portfolio.
             </motion.p>
 
             {/* Feature Checkmarks */}
             <motion.div variants={item} className="flex flex-wrap gap-2 sm:gap-4 mt-4 w-full">
-              {['100% Practical', 'Small Batch Sizes', 'Live Ad Campaigns'].map((feat) => (
+              {['Live Projects', 'Client Requirements', 'Campaign Planning'].map((feat) => (
                 <span key={feat} className="inline-flex items-center gap-1.5 sm:gap-2.5 bg-white px-3 sm:px-5 py-2 sm:py-3 rounded-lg border-2 border-black shadow-[2px_2px_0px_#000000] sm:shadow-[3px_3px_0px_#000000] text-black text-[0.65rem] sm:text-base font-900 uppercase tracking-wide">
                   <CheckCircle2 size={16} className="text-[var(--color-primary)] flex-shrink-0 sm:w-5 sm:h-5" /> {feat}
                 </span>
@@ -108,7 +97,7 @@ const Hero = () => {
             <motion.div variants={item} className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4 mt-6 w-full">
               <div className="flex flex-wrap gap-3 sm:gap-4 w-full sm:w-auto">
                 <button onClick={() => openModal()} className="btn btn-primary btn-lg flex-1 sm:flex-none justify-center">
-                  <span>Enroll Now</span>
+                  <span>Enroll Now (₹999)</span>
                   <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                 </button>
                 <a href="#contact" className="btn btn-secondary btn-lg flex-1 sm:flex-none justify-center">
@@ -122,7 +111,7 @@ const Hero = () => {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
                 </span>
-                <span className="text-xs font-800 uppercase tracking-wide">Special Offer: Limited Seats Left</span>
+                <span className="text-xs font-800 uppercase tracking-wide">First Batch: ONLY 15 SEATS</span>
               </div>
               <a
                 href={WHATSAPP_URL(whatsappMsg)}

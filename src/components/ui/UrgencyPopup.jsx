@@ -73,7 +73,7 @@ const UrgencyPopup = () => {
                   }}
                   className="mt-3 text-xs font-900 uppercase bg-black text-white px-4 py-1.5 rounded-lg border-2 border-black hover:bg-white hover:text-black transition-colors"
                 >
-                  Reserve Now
+                  Reserve Now (₹999)
                 </button>
               </div>
             </div>

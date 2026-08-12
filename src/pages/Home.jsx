@@ -211,7 +211,7 @@ const LearningMethodology = () => {
               A practical approach to learning.
             </h2>
             <p className="text-slate-700 font-500 text-subheading mb-8">
-              Four pillars that make offline training at SkillEdge Digital effective, practical, and heavily career-oriented.
+              Four pillars that make offline training at Grow Funda Academy effective, practical, and heavily career-oriented.
             </p>
           </div>
 

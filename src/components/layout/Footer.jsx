@@ -7,7 +7,7 @@ import { COURSES } from '../../data/courses';
 
 const Footer = () => {
   const whatsappUrl = WHATSAPP_URL(
-    "Hello! I have a question about SkillEdge Digital courses in Lucknow."
+    "Hello! I have a question about Grow Funda courses in Lucknow."
   );
 
   return (
@@ -136,7 +136,7 @@ const Footer = () => {
               
               <div className="flex items-center gap-3 mt-4">
                 <a 
-                  href="https://wa.me/917905848463" 
+                  href="https://wa.me/8434890116" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   aria-label="WhatsApp"

@@ -6,34 +6,29 @@ import { Link } from 'react-router-dom';
 
 const REASONS = [
   {
-    icon: <BookOpen size={22} />,
-    title: 'Practical-First Learning',
-    desc: 'No theory overload. Every concept is taught with hands-on practice, real campaigns, and live tools.',
+    icon: <Wrench size={22} />,
+    title: 'LIVE CLIENT PROJECTS',
+    desc: 'Work on practical projects based on real business requirements.',
   },
   {
     icon: <Users size={22} />,
-    title: 'Offline Mentorship',
-    desc: 'Learn face-to-face with an experienced trainer. Ask questions, get answers, and grow faster.',
+    title: 'AGENCY-STYLE LEARNING',
+    desc: 'Understand how a real marketing agency operates—from getting a client to delivering the project.',
   },
   {
-    icon: <Wrench size={22} />,
-    title: 'Industry Tools Included',
-    desc: 'Train on tools professionals actually use — Google Ads, Meta Ads Manager, SEMrush, Analytics, and more.',
-  },
-  {
-    icon: <MessageSquare size={22} />,
-    title: 'Live Doubt Solving',
-    desc: 'Every doubt is addressed in class. No more waiting 24 hours for a reply to your question.',
+    icon: <BookOpen size={22} />,
+    title: 'BUILD YOUR PORTFOLIO',
+    desc: 'Build practical work that you can showcase to potential clients or employers.',
   },
   {
     icon: <Star size={22} />,
-    title: 'Small Batch Size',
-    desc: 'We keep batches small intentionally. You get personal attention, not a crowded classroom experience.',
+    title: 'AI + MODERN MARKETING',
+    desc: 'Use AI tools for content, research, copywriting, planning and productivity.',
   },
   {
     icon: <Trophy size={22} />,
-    title: 'Career Guidance',
-    desc: 'Beyond the course, we help you build your portfolio, prepare for interviews, and navigate your career path.',
+    title: 'FREELANCING & CLIENT ACQUISITION',
+    desc: 'Learn Instagram, LinkedIn, WhatsApp, cold outreach, local business prospecting and freelancing fundamentals.',
   },
 ];
 
@@ -43,9 +38,9 @@ const WhyUsPreview = () => {
       <Container>
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
           <SectionHeading
-            eyebrow="Why Choose Us"
-            title={<>What makes us<br />different.</>}
-            subtitle="Offline training in small batches, with personal attention and real-world practice."
+            eyebrow="Grow Funda Academy"
+            title={<>What makes Grow Funda<br />different.</>}
+            subtitle="Agency-style training with live projects and portfolio building."
             dark={false}
             align="left"
             id="why-us-heading"

@@ -28,7 +28,7 @@ const EnrollModal = () => {
     setIsSubmitting(true);
     
     // Construct WhatsApp Message
-    const text = `Hello SkillEdge! I want to enroll.
+    const text = `Hello Grow Funda! I want to enroll in the ₹999 pre-enrollment.
 Name: ${data.fullName}
 Phone: ${data.phone}
 Email: ${data.email}
@@ -85,7 +85,7 @@ Experience: ${data.experience}`;
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
               </span>
               <p className="text-xs sm:text-sm font-800 text-black uppercase tracking-wide">
-                Hurry! Only <span className="text-[var(--color-primary)]">3 Seats Left</span> in the Upcoming Batch
+                Hurry! <span className="text-[var(--color-primary)]">₹999 Pre-Enrollment</span> Open for First 15 Seats
               </p>
             </div>
 

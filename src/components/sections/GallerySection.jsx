@@ -55,9 +55,9 @@ const GallerySection = () => {
 
       <Container>
         <SectionHeading
-          eyebrow="Life at SkillEdge"
-          title={<>Behind the scenes.<br />Real classes, real people.</>}
-          subtitle="Take a look at our state-of-the-art classroom in Lucknow where the magic of practical digital marketing happens."
+          eyebrow="Life at Grow Funda"
+          title="See our classroom in action."
+          subtitle="A glimpse into our offline training batches, practical sessions, and student activities."
           align="center"
           id="gallery-heading"
         />

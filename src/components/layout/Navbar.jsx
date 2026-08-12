@@ -100,7 +100,7 @@ const Navbar = () => {
             <div
               className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 bg-black text-white"
             >
-              <span className="font-800 text-sm leading-none">SE</span>
+              <span className="font-800 text-sm leading-none">GF</span>
             </div>
             <span className="font-800 text-[1.05rem] text-[var(--color-text)] tracking-tight hidden sm:block">
               {BRAND.name}

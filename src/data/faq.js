@@ -3,88 +3,64 @@
 export const FAQS = [
   {
     id: 1,
-    question: 'Is the training fully offline?',
-    answer:
-      'Yes. All our training programs are conducted in-person at our institute in Lucknow. We believe offline learning with a real mentor accelerates skill development far more effectively than online courses.',
+    question: 'Is this course suitable for beginners?',
+    answer: 'Yes. The program starts from fundamentals and gradually moves toward practical marketing.',
     category: 'general',
   },
   {
     id: 2,
-    question: 'Where is the institute located?',
-    answer:
-      'We are located in Lucknow, Uttar Pradesh. Please contact us via WhatsApp or call for the exact address and directions to our classroom.',
+    question: 'Do I need previous experience?',
+    answer: 'No previous professional digital marketing experience is required.',
     category: 'general',
   },
   {
     id: 3,
-    question: 'Who can join the Digital Marketing course?',
-    answer:
-      'Anyone can join — students, graduates, working professionals, business owners, or homemakers. No prior technical knowledge is required. If you have basic computer skills, you are ready to start.',
-    category: 'enrollment',
+    question: 'Will I work on live clients?',
+    answer: 'You will receive practical exposure to real client/business requirements and live projects subject to project availability, suitability and confidentiality requirements.',
+    category: 'curriculum',
   },
   {
     id: 4,
-    question: 'What is the course duration?',
-    answer:
-      'Course durations vary. Our flagship Digital Marketing Mastery program runs for 3 months. Specialized courses like SEO Mastery, Google Ads, or Meta Ads are 4–6 weeks. Contact us to confirm current batch schedules.',
-    category: 'courses',
+    question: 'Will I get a job after the course?',
+    answer: 'We do not guarantee a job. The program focuses on practical skills, portfolio building and becoming more client/job-ready.',
+    category: 'general',
   },
   {
     id: 5,
-    question: 'What is the course fee?',
-    answer:
-      'Course fees depend on the program you choose. We also offer EMI options to make learning accessible. Please WhatsApp us or fill the enrollment form and we will share the complete fee structure.',
-    category: 'fees',
+    question: 'Will I get a certificate?',
+    answer: 'Yes, eligible students receive a certificate after completing the program and required coursework.',
+    category: 'general',
   },
   {
     id: 6,
-    question: 'Are practical projects included?',
-    answer:
-      'Absolutely. Practical learning is at the core of everything we do. You will work on real campaigns, live websites, and industry tools during the course — not just theory.',
-    category: 'curriculum',
+    question: 'Can I pay in installments?',
+    answer: 'Yes, the enrollment/payment structure can be discussed with the admissions team.',
+    category: 'fees',
   },
   {
     id: 7,
-    question: 'Will I receive a certificate?',
-    answer:
-      'Yes. Upon successfully completing the course, you will receive a course completion certificate from SkillEdge Digital. You may also prepare for Google and Meta certification exams as part of the program.',
-    category: 'curriculum',
+    question: 'What is the pre-enrollment fee?',
+    answer: '₹999.',
+    category: 'fees',
   },
   {
     id: 8,
-    question: 'Are weekend batches available?',
-    answer:
-      'Yes. We offer both weekday and weekend batches to accommodate students and working professionals. Contact us to know the current available batch timings.',
-    category: 'enrollment',
+    question: 'What is the complete course fee?',
+    answer: '₹30,000 for the 3-month program.',
+    category: 'fees',
   },
   {
     id: 9,
-    question: 'Is career guidance provided after the course?',
-    answer:
-      'Yes. We provide career guidance, portfolio building support, and interview preparation as part of our training. We want to see our students succeed beyond the classroom.',
-    category: 'career',
-  },
-  {
-    id: 10,
-    question: 'Can a complete beginner join?',
-    answer:
-      'Yes! Our courses are designed to be accessible from zero. We start with fundamentals and progressively build up to advanced, real-world skills. Many of our students started with no marketing background at all.',
+    question: 'What happens after I pay ₹999?',
+    answer: 'Our admissions team will contact you, verify your enrollment details and provide the next steps for joining the batch.',
     category: 'enrollment',
-  },
-  {
-    id: 11,
-    question: 'How many students are in each batch?',
-    answer:
-      'We keep our batches intentionally small to ensure every student gets personalized attention and direct mentorship. This is one of the key differences of our offline training approach.',
-    category: 'general',
-  },
-  {
-    id: 12,
-    question: 'Do I need a laptop?',
-    answer:
-      'We recommend bringing your own laptop for hands-on practice. However, if you don\'t have one, please contact us and we will work out a suitable arrangement.',
-    category: 'general',
-  },
+  }
 ];
 
-export const FAQ_CATEGORIES = ['general', 'enrollment', 'courses', 'curriculum', 'fees', 'career'];
+export const CATEGORIES = [
+  { id: 'all', label: 'All Questions' },
+  { id: 'general', label: 'General' },
+  { id: 'fees', label: 'Fees & Payment' },
+  { id: 'curriculum', label: 'Curriculum' },
+  { id: 'enrollment', label: 'Enrollment' },
+];
