@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown, ArrowRight, Sparkles, Target, Search, Share2, Layers, PhoneCall } from 'lucide-react';
+import { Menu, X, ChevronDown, ArrowRight, Sparkles, Target, Search, Share2, Layers } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
-import { BRAND, CONTACT, WHATSAPP_URL, DEFAULT_WHATSAPP_MESSAGE, RAZORPAY_PRE_ENROLL_LINK } from '../../config/contact';
+import { BRAND, WHATSAPP_URL, DEFAULT_WHATSAPP_MESSAGE } from '../../config/contact';
 import { NAV_LINKS } from '../../data/navigation';
 import { COURSES } from '../../data/courses';
 import { useModal } from '../../context/ModalContext';
@@ -97,53 +97,29 @@ const Navbar = () => {
             className="flex items-center gap-2.5 no-underline flex-shrink-0"
             aria-label={`${BRAND.name} — Home`}
           >
-            <div className="h-10 w-10 overflow-hidden flex-shrink-0 flex items-center justify-center rounded-full bg-black border border-amber-400/40 shadow-sm">
-              <img src="/logo.png" alt="Flybitfalcon Logo" className="h-full w-full object-cover object-center" />
+            <div className="h-10 w-8 overflow-hidden flex-shrink-0 flex items-center justify-start">
+              <img src="/logo.png" alt="Flybitfalcon Logo" className="h-full w-full object-cover object-left" />
             </div>
             <span className="font-800 text-[1.05rem] text-[var(--color-text)] tracking-tight hidden sm:block">
               {BRAND.name}
             </span>
           </Link>
 
-          {/* ── Desktop CTAs (Support Phone, WhatsApp & Razorpay Pre-Enroll) ── */}
-          <div className="flex items-center gap-2.5 flex-shrink-0 ml-auto">
-            {/* Support Phone Link */}
-            <a
-              href={`tel:${CONTACT.supportPhone}`}
-              title={`Call Support: ${CONTACT.supportPhone}`}
-              className="hidden lg:flex items-center gap-1.5 px-3 py-2 rounded-xl text-[0.82rem] font-800 text-[var(--color-text)] bg-white border-2 border-black hover:bg-amber-100 transition-all no-underline shadow-[2px_2px_0px_#000]"
-            >
-              <PhoneCall size={15} className="text-amber-600 shrink-0" />
-              <span>{CONTACT.supportPhone}</span>
-            </a>
-
+          {/* ── Desktop CTAs (WhatsApp & Enroll Now) ── */}
+          <div className="flex items-center gap-3 flex-shrink-0 ml-auto">
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Chat on WhatsApp"
-              className="flex items-center gap-2 px-3 py-2 rounded-xl text-[0.85rem] font-800 text-[var(--color-text)] bg-white border-2 border-black hover:bg-[var(--color-secondary)] hover:translate-x-[2px] hover:translate-y-[2px] shadow-[4px_4px_0px_#000] hover:shadow-[2px_2px_0px_#000] transition-all no-underline uppercase font-heading tracking-wide"
+              className="flex items-center gap-2 px-3.5 py-2 rounded-xl text-[0.85rem] font-800 text-[var(--color-text)] bg-white border-2 border-black hover:bg-[var(--color-secondary)] hover:translate-x-[2px] hover:translate-y-[2px] shadow-[4px_4px_0px_#000] hover:shadow-[2px_2px_0px_#000] transition-all no-underline uppercase font-heading tracking-wide"
             >
               <FaWhatsapp size={18} className="text-[#22C55E] flex-shrink-0" />
-              <span className="hidden md:inline">WhatsApp</span>
+              <span className="hidden sm:inline">WhatsApp</span>
             </a>
-
-            {/* Pre-Enrollment / Razorpay Link Button */}
-            {RAZORPAY_PRE_ENROLL_LINK ? (
-              <a
-                href={RAZORPAY_PRE_ENROLL_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-primary btn-sm font-heading tracking-wide uppercase shadow-[4px_4px_0px_#000] hover:shadow-[2px_2px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] border-2 border-black rounded-xl no-underline inline-flex items-center justify-center"
-                id="navbar-pre-enroll-cta"
-              >
-                Pre-Enroll Now
-              </a>
-            ) : (
-              <button onClick={() => openModal()} className="btn btn-primary btn-sm font-heading tracking-wide uppercase shadow-[4px_4px_0px_#000] hover:shadow-[2px_2px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] border-2 border-black rounded-xl" id="navbar-enroll-cta">
-                Pre-Enroll Now
-              </button>
-            )}
+            <button onClick={() => openModal()} className="btn btn-primary btn-sm font-heading tracking-wide uppercase shadow-[4px_4px_0px_#000] hover:shadow-[2px_2px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] border-2 border-black rounded-xl" id="navbar-enroll-cta">
+              Enroll Now
+            </button>
           </div>
         </div>
       </header>

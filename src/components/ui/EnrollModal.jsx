@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { Send, X, User, Phone, Mail, BookOpen, Briefcase } from 'lucide-react';
 import { useModal } from '../../context/ModalContext';
-import { CONTACT, RAZORPAY_PRE_ENROLL_LINK } from '../../config/contact';
+import { CONTACT } from '../../config/contact';
 
 const EnrollModal = () => {
   const { isEnrollModalOpen, closeModal, prefilledCourse } = useModal();
@@ -268,24 +268,8 @@ Experience: ${data.experience}`;
                     </>
                   )}
                 </button>
-
-                {/* Direct Razorpay Pre-Enroll Payment Button Option */}
-                {RAZORPAY_PRE_ENROLL_LINK && (
-                  <div className="mt-4 pt-3 border-t-2 border-dashed border-slate-300 text-center">
-                    <p className="text-xs font-800 text-slate-600 mb-2 uppercase tracking-wider">⚡ Instant Online Seat Booking</p>
-                    <a
-                      href={RAZORPAY_PRE_ENROLL_LINK}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-900 font-heading tracking-wide text-base py-3 px-6 rounded-2xl border-3 border-black shadow-[4px_4px_0px_#000000] hover:shadow-[6px_6px_0px_#000000] hover:-translate-y-0.5 transition-all no-underline"
-                    >
-                      💳 Pay ₹999 Pre-Enrollment via Razorpay
-                    </a>
-                  </div>
-                )}
-
                 <p className="text-center text-xs font-600 text-slate-500 mt-3">
-                  Your information is 100% secure. Support Helpline: <a href={`tel:${CONTACT.supportPhone}`} className="text-black font-700 underline">{CONTACT.supportPhone}</a>
+                  Your information is 100% secure. We don't spam.
                 </p>
               </form>
             </div>

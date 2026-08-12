@@ -21,12 +21,9 @@ const Footer = () => {
         <Container>
           <div className="flex flex-col md:flex-row justify-between items-end gap-10">
             <div>
-              <div className="flex items-center gap-4 mb-4">
-                <img src="/logo.png" alt="Flybitfalcon Logo" className="w-16 h-16 rounded-full object-cover border-2 border-amber-400 shadow-md" />
-                <h2 className="text-[clamp(2.5rem,7vw,7rem)] font-900 leading-none tracking-tighter uppercase">
-                  {BRAND.name}.
-                </h2>
-              </div>
+              <h2 className="text-[clamp(3rem,8vw,8rem)] font-900 leading-none tracking-tighter uppercase mb-4">
+                {BRAND.name}.
+              </h2>
               <p className="text-slate-400 text-lg md:text-xl max-w-lg leading-relaxed font-500">
                 Building real digital marketers in Lucknow through hardcore practical offline training.
               </p>
