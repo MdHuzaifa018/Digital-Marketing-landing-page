@@ -91,9 +91,10 @@ const Hero = () => {
             </motion.h1>
 
             {/* Subtitle */}
-            <motion.p variants={item} className="text-subheading max-w-[550px] mt-2 font-500 text-slate-600">
-              At Flybit, you'll learn how digital marketing actually works inside a marketing agency. Learn Digital Marketing. Work on Live Projects. Build Your Portfolio.
-            </motion.p>
+            <motion.div variants={item} className="text-subheading max-w-[550px] mt-2 font-500 text-slate-600 flex flex-col gap-2">
+              <p>At Flybit, you'll learn how digital marketing actually works inside a marketing agency. No boring theory.</p>
+              <p className="font-700 text-[var(--color-primary)]">Your goal: Learn &rarr; Practice &rarr; Build Portfolio &rarr; Become Client-Ready</p>
+            </motion.div>
 
             {/* Feature Checkmarks */}
             <motion.div variants={item} className="flex flex-wrap gap-2 sm:gap-4 mt-4 w-full">
