@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useForm } from 'react-hook-form';
-import { Send, X, User, Phone, Mail, BookOpen, Briefcase } from 'lucide-react';
+import { Send, X, User, Phone, Mail, BookOpen, Briefcase, CreditCard } from 'lucide-react';
 import { useModal } from '../../context/ModalContext';
-import { CONTACT } from '../../config/contact';
+import { CONTACT, RAZORPAY_PRE_ENROLL_LINK } from '../../config/contact';
 
 const EnrollModal = () => {
   const { isEnrollModalOpen, closeModal, prefilledCourse } = useModal();
@@ -27,22 +27,11 @@ const EnrollModal = () => {
   const onSubmit = async (data) => {
     setIsSubmitting(true);
     
-    // Construct WhatsApp Message
-    const text = `Hello Flybitfalcon! I want to enroll in the ₹999 pre-enrollment.
-Name: ${data.fullName}
-Phone: ${data.phone}
-Email: ${data.email}
-Course: ${data.course}
-Experience: ${data.experience}`;
-
-    const encodedText = encodeURIComponent(text);
-    const whatsappUrl = `https://wa.me/${CONTACT.whatsapp.replace(/[^0-9]/g, '')}?text=${encodedText}`;
-
-    // Simulate slight delay for UX
-    await new Promise((resolve) => setTimeout(resolve, 800));
+    // Simulate lead submission delay
+    await new Promise((resolve) => setTimeout(resolve, 1000));
     
-    // Open WhatsApp
-    window.open(whatsappUrl, '_blank');
+    // Redirect to Razorpay Payment Link
+    window.open(RAZORPAY_PRE_ENROLL_LINK, '_blank');
     
     setIsSubmitting(false);
     closeModal();
@@ -93,7 +82,7 @@ Experience: ${data.experience}`;
             <div className="flex items-center justify-between p-6 border-b-2 border-black bg-[var(--color-bg-secondary)]">
               <div>
                 <h3 className="text-2xl font-900 font-heading text-black">Start Your Journey</h3>
-                <p className="text-sm font-500 text-slate-700 mt-1">Fill out the form and we'll connect on WhatsApp!</p>
+                <p className="text-sm font-500 text-slate-700 mt-1">Reserve your seat securely.</p>
               </div>
               <button
                 onClick={closeModal}
@@ -133,7 +122,7 @@ Experience: ${data.experience}`;
                   {/* Phone Number */}
                   <div className="space-y-2">
                     <label htmlFor="phone" className="block text-sm font-700 text-black">
-                      WhatsApp Number *
+                      Phone Number *
                     </label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
@@ -147,7 +136,7 @@ Experience: ${data.experience}`;
                           errors.phone ? 'border-red-500 focus:border-red-500 focus:ring-4 focus:ring-red-500/20' : 'border-slate-300 focus:border-black focus:shadow-[4px_4px_0px_#000]'
                         }`}
                         {...register('phone', {
-                          required: 'WhatsApp number is required',
+                          required: 'Phone number is required',
                           pattern: {
                             value: /^[0-9]{10,15}$/,
                             message: 'Enter a valid phone number',
@@ -259,18 +248,23 @@ Experience: ${data.experience}`;
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                       </svg>
-                      Connecting to WhatsApp...
+                      Redirecting to Payment...
                     </span>
                   ) : (
                     <>
-                      <span>Submit & Chat on WhatsApp</span>
-                      <Send size={22} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                      <span>Proceed to Payment</span>
+                      <CreditCard size={22} className="group-hover:scale-110 transition-transform" />
                     </>
                   )}
                 </button>
-                <p className="text-center text-xs font-600 text-slate-500 mt-3">
-                  Your information is 100% secure. We don't spam.
-                </p>
+                <div className="text-center mt-4">
+                  <p className="text-xs font-600 text-slate-500">
+                    Your information is 100% secure.
+                  </p>
+                  <p className="text-[0.7rem] font-500 text-slate-500 mt-1">
+                    Need help? Contact our Support Team at <a href={`tel:${CONTACT.supportPhone}`} className="text-blue-600 hover:underline">{CONTACT.supportPhone}</a>
+                  </p>
+                </div>
               </form>
             </div>
           </motion.div>
