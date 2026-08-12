@@ -27,11 +27,22 @@ const EnrollModal = () => {
   const onSubmit = async (data) => {
     setIsSubmitting(true);
     
-    // Simulate lead submission delay
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    // Construct WhatsApp Message
+    const text = `Hello Flybitfalcon! I want to enroll in the ₹999 pre-enrollment.
+Name: ${data.fullName}
+Phone: ${data.phone}
+Email: ${data.email}
+Course: ${data.course}
+Experience: ${data.experience}`;
+
+    const encodedText = encodeURIComponent(text);
+    const whatsappUrl = `https://wa.me/${CONTACT.whatsapp.replace(/[^0-9]/g, '')}?text=${encodedText}`;
+
+    // Simulate slight delay for UX
+    await new Promise((resolve) => setTimeout(resolve, 800));
     
-    // Redirect to Razorpay Payment Link
-    window.open(RAZORPAY_PRE_ENROLL_LINK, '_blank');
+    // Open WhatsApp
+    window.open(whatsappUrl, '_blank');
     
     setIsSubmitting(false);
     closeModal();
@@ -248,12 +259,12 @@ const EnrollModal = () => {
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                       </svg>
-                      Redirecting to Payment...
+                      Connecting to WhatsApp...
                     </span>
                   ) : (
                     <>
-                      <span>Proceed to Payment</span>
-                      <CreditCard size={22} className="group-hover:scale-110 transition-transform" />
+                      <span>Submit & Chat on WhatsApp</span>
+                      <Send size={22} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                     </>
                   )}
                 </button>
