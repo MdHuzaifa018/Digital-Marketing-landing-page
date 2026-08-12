@@ -5,6 +5,8 @@ import { FaWhatsapp } from 'react-icons/fa';
 import { WHATSAPP_URL } from '../../config/contact';
 import { useModal } from '../../context/ModalContext';
 
+const CYCLING_WORDS = ['DIGITAL MARKETING.', 'SEO.', 'META ADS.', 'CONTENT CREATION.'];
+
 const whatsappMsg = "Hello! I'm interested in your Digital Marketing course in Lucknow. Please share details.";
 
 const stagger = {
@@ -18,7 +20,15 @@ const item = {
 };
 
 const Hero = () => {
+  const [wordIndex, setWordIndex] = useState(0);
   const { openModal } = useModal();
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setWordIndex((prev) => (prev + 1) % CYCLING_WORDS.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section
@@ -60,10 +70,11 @@ const Hero = () => {
 
             {/* Main Headline */}
             <motion.h1 variants={item} className="text-hero leading-[1.1] max-w-[850px] text-[var(--color-primary)] font-heading uppercase gsap-scrub-text flex flex-col sm:block w-full">
-              <span>DON'T JUST </span>
+              <span>DON'T JUST LEARN </span>
               <span className="relative inline-block sm:align-bottom w-auto sm:min-w-[240px] md:min-w-[320px] h-[1.3em] mt-2 sm:mt-0 sm:ml-2 max-w-full" aria-live="polite">
                 <AnimatePresence mode="popLayout">
                   <motion.span
+                    key={wordIndex}
                     initial={{ opacity: 0, y: 24 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -24 }}
@@ -71,12 +82,12 @@ const Hero = () => {
                     className="inline-block bg-[var(--color-secondary)] text-black px-2 sm:px-4 py-1 border-2 border-black -skew-x-6 whitespace-nowrap shadow-[3px_3px_0px_#000000] max-w-full overflow-hidden text-ellipsis"
                     style={{ WebkitTextFillColor: 'initial', color: 'black' }}
                   >
-                    LEARN
+                    {CYCLING_WORDS[wordIndex]}
                   </motion.span>
                 </AnimatePresence>
               </span>
               <br className="hidden sm:block" />
-              <span className="mt-2 sm:mt-0 inline-block w-full">IT. ACTUALLY DO IT.</span>
+              <span className="mt-2 sm:mt-0 inline-block w-full">ACTUALLY DO IT.</span>
             </motion.h1>
 
             {/* Subtitle */}
