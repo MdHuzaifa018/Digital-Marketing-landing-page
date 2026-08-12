@@ -1,10 +1,15 @@
 // Central contact/brand configuration
 // Update these values when client confirms details
 
+// 💳 RAZORPAY PAYMENT LINK FOR PRE-ENROLLMENT
+export const RAZORPAY_PRE_ENROLL_LINK = "https://rzp.io/l/flybitfalcon-enroll";
+
 export const CONTACT = {
   whatsapp: '917905848463', // Client's WhatsApp number (country code + number)
   phone: '+91 79058 48463',
-  email: 'hello@growfunda.com',
+  supportPhone: '+91 79058 48463',
+  email: 'hello@flybitfalcon.com',
+  supportEmail: 'support@flybitfalcon.com',
   address: 'Lucknow, Uttar Pradesh', // Will update later if requested
   mapEmbed: 'https://maps.google.com/?q=Lucknow', // Replace with Google Maps embed URL
   timings: 'Mon – Sat: 9:00 AM – 7:00 PM',
