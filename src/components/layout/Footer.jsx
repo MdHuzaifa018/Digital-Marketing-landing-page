@@ -7,7 +7,7 @@ import { COURSES } from '../../data/courses';
 
 const Footer = () => {
   const whatsappUrl = WHATSAPP_URL(
-    "Hello! I have a question about Grow Funda courses in Lucknow."
+    "Hello! I have a question about Flybit courses in Lucknow."
   );
 
   return (

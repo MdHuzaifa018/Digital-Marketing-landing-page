@@ -11,7 +11,7 @@ export const CONTACT = {
 };
 
 export const BRAND = {
-  name: 'Grow Funda',
+  name: 'Flybit',
   tagline: 'Digital Marketing Academy',
   shortTagline: 'Offline Digital Marketing Training in Lucknow',
   city: 'Lucknow',

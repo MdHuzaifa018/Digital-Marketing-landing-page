@@ -55,7 +55,7 @@ const GallerySection = () => {
 
       <Container>
         <SectionHeading
-          eyebrow="Life at Grow Funda"
+          eyebrow="Life at Flybit"
           title="See our classroom in action."
           subtitle="A glimpse into our offline training batches, practical sessions, and student activities."
           align="center"
