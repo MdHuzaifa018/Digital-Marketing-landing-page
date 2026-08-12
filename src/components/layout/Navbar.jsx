@@ -100,9 +100,6 @@ const Navbar = () => {
             <div className="h-12 w-12 overflow-hidden flex-shrink-0 flex items-center justify-center rounded-full bg-black shadow-sm">
               <img src="/logo.png" alt="Flybitfalcon Logo" className="h-full w-full object-contain" />
             </div>
-            <span className="font-800 text-[1.1rem] text-[var(--color-text)] tracking-tight hidden sm:block">
-              {BRAND.name}
-            </span>
           </Link>
 
           {/* ── Desktop CTAs (WhatsApp & Enroll Now) ── */}
