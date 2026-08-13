@@ -19,7 +19,7 @@ export const COURSES = [
     nextBatch: 'New Batch Starting Soon',
     badge: 'Flagship Course',
     badgeType: 'accent',
-    image: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=1200&auto=format&fit=crop',
+    image: '/images/course-banner.png',
     tools: ['Google Ads', 'Meta Ads Manager', 'Canva', 'WordPress', 'Elementor', 'ChatGPT', 'Search Console'],
     features: [
       'Live Client Projects',

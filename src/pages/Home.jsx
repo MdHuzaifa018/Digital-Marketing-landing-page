@@ -88,9 +88,9 @@ const Home = () => {
         <LearningMethodology />
       </div>
 
-      <div data-color="#000000">
+      {/* <div data-color="#000000">
         <GallerySection />
-      </div>
+      </div> */}
 
       <div data-color="#FCD34D"> {/* Tailwind amber-300 / secondary color */}
         <WhyUsPreview />

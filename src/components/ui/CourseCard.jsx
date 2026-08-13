@@ -41,20 +41,20 @@ const CourseCard = ({ course, index = 0 }) => {
       </div>
 
       {/* Main Body: Poster + Details */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+      <div className="flex flex-col gap-8 lg:gap-10">
         
-        {/* Course Poster */}
-        <div className="lg:col-span-5 relative rounded-2xl border-3 border-black overflow-hidden shadow-[4px_4px_0px_#000000] bg-[var(--color-secondary)]">
+        {/* Full Cover Course Banner */}
+        <div className="w-full relative rounded-2xl border-3 border-black overflow-hidden shadow-[4px_4px_0px_#000000] bg-black">
           <img
             src={course.image || '/images/course_dm.png'}
             alt={course.title}
             onError={(e) => { e.currentTarget.src = '/images/course_dm.png'; }}
-            className="w-full aspect-[4/3] object-cover"
+            className="w-full h-auto object-cover"
           />
         </div>
 
         {/* Course Details */}
-        <div className="lg:col-span-7 flex flex-col gap-6">
+        <div className="flex flex-col gap-6">
           <div>
             <h3 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-900 text-black leading-none mb-4">
               {course.title}
