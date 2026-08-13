@@ -173,7 +173,7 @@ const Hero = () => {
               <img 
                 src="/images/hero-image.png" 
                 alt="Digital Marketing Training Lucknow" 
-                className="w-full h-auto aspect-square sm:aspect-[4/5] lg:aspect-square object-cover transform group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-auto object-contain transform group-hover:scale-105 transition-transform duration-500"
               />
             </motion.div>
           </motion.div>
