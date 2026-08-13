@@ -84,7 +84,7 @@ const Home = () => {
 
       <div data-color="#ffffff">
         <CurriculumSection />
-        <VideoShowcase />
+        {/* <VideoShowcase /> */}
         <LearningMethodology />
       </div>
 
@@ -101,9 +101,9 @@ const Home = () => {
         <FAQPreview />
       </div>
 
-      <div data-color="#ffffff">
+      {/* <div data-color="#ffffff">
         <ContactSection />
-      </div>
+      </div> */}
     </>
   );
 };

@@ -31,30 +31,30 @@ export const FAQS = [
     answer: 'Yes, eligible students receive a certificate after completing the program and required coursework.',
     category: 'general',
   },
-  {
-    id: 6,
-    question: 'Can I pay in installments?',
-    answer: 'Yes, the enrollment/payment structure can be discussed with the admissions team.',
-    category: 'fees',
-  },
-  {
-    id: 7,
-    question: 'What is the pre-enrollment fee?',
-    answer: '₹999.',
-    category: 'fees',
-  },
-  {
-    id: 8,
-    question: 'What is the complete course fee?',
-    answer: '₹30,000 for the 3-month program.',
-    category: 'fees',
-  },
-  {
-    id: 9,
-    question: 'What happens after I pay ₹999?',
-    answer: 'Our admissions team will contact you, verify your enrollment details and provide the next steps for joining the batch.',
-    category: 'enrollment',
-  }
+  // {
+  //   id: 6,
+  //   question: 'Can I pay in installments?',
+  //   answer: 'Yes, the enrollment/payment structure can be discussed with the admissions team.',
+  //   category: 'fees',
+  // },
+  // {
+  //   id: 7,
+  //   question: 'What is the pre-enrollment fee?',
+  //   answer: '₹999.',
+  //   category: 'fees',
+  // },
+  // {
+  //   id: 8,
+  //   question: 'What is the complete course fee?',
+  //   answer: '₹30,000 for the 3-month program.',
+  //   category: 'fees',
+  // },
+  // {
+  //   id: 9,
+  //   question: 'What happens after I pay ₹999?',
+  //   answer: 'Our admissions team will contact you, verify your enrollment details and provide the next steps for joining the batch.',
+  //   category: 'enrollment',
+  // }
 ];
 
 export const CATEGORIES = [
