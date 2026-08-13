@@ -46,9 +46,9 @@ const CourseCard = ({ course, index = 0 }) => {
         {/* Full Cover Course Banner */}
         <div className="w-full relative rounded-2xl border-3 border-black overflow-hidden shadow-[4px_4px_0px_#000000] bg-black">
           <img
-            src={course.image || '/images/course_dm.png'}
+            src={course.image || '/images/course.png'}
             alt={course.title}
-            onError={(e) => { e.currentTarget.src = '/images/course_dm.png'; }}
+            onError={(e) => { e.currentTarget.src = '/images/course.png'; }}
             className="w-full h-auto object-cover"
           />
         </div>

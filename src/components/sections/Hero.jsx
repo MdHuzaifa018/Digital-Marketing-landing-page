@@ -154,20 +154,28 @@ const Hero = () => {
 
           </motion.div>
 
-          {/* Right Column: Vibrant Abstract 3D Image */}
+          {/* Right Column: Vibrant Hero Image */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="relative w-full mt-4 lg:mt-0"
+            className="relative w-full mt-10 lg:mt-0 flex justify-center lg:justify-end"
           >
-            <motion.img 
-              animate={{ y: [-5, 5, -5] }}
+            {/* Decorative Background Blob */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] h-[85%] bg-[var(--color-secondary)] rounded-full blur-3xl opacity-30 -z-10 animate-pulse"></div>
+            
+            <motion.div 
+              animate={{ y: [-8, 8, -8] }}
               transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-              src="/images/hero-image.png" 
-              alt="Digital Marketing Training Lucknow" 
-              className="w-full h-[280px] sm:h-[400px] lg:h-[500px] object-contain bg-black rounded-3xl border-4 border-black shadow-[8px_8px_0px_#000000] lg:shadow-[12px_12px_0px_#000000]"
-            />
+              className="relative w-full max-w-[500px] rounded-[2rem] border-4 border-black shadow-[12px_12px_0px_var(--color-primary)] lg:shadow-[20px_20px_0px_var(--color-primary)] overflow-hidden bg-black group"
+            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
+              <img 
+                src="/images/hero-image.png" 
+                alt="Digital Marketing Training Lucknow" 
+                className="w-full h-auto aspect-square sm:aspect-[4/5] lg:aspect-square object-cover transform group-hover:scale-105 transition-transform duration-500"
+              />
+            </motion.div>
           </motion.div>
 
         </div>
