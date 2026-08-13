@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useForm } from 'react-hook-form';
-import { Send, X, User, Phone, Mail, BookOpen, Briefcase, CreditCard } from 'lucide-react';
+import { Send, X, User, Phone, Mail, BookOpen, Briefcase, CreditCard, CheckCircle2 } from 'lucide-react';
 import { useModal } from '../../context/ModalContext';
 import { CONTACT, RAZORPAY_PRE_ENROLL_LINK } from '../../config/contact';
 
 const EnrollModal = () => {
   const { isEnrollModalOpen, closeModal, prefilledCourse } = useModal();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [step, setStep] = useState(1);
+  const [whatsappLink, setWhatsappLink] = useState('');
 
   const {
     register,
@@ -17,12 +19,17 @@ const EnrollModal = () => {
     formState: { errors },
   } = useForm();
 
-  // Set prefilled course when modal opens
+  // Set prefilled course when modal opens, and reset step if closed
   useEffect(() => {
-    if (isEnrollModalOpen && prefilledCourse) {
-      setValue('course', prefilledCourse);
+    if (isEnrollModalOpen) {
+      if (prefilledCourse) setValue('course', prefilledCourse);
+    } else {
+      setTimeout(() => {
+        setStep(1);
+        reset();
+      }, 300);
     }
-  }, [isEnrollModalOpen, prefilledCourse, setValue]);
+  }, [isEnrollModalOpen, prefilledCourse, setValue, reset]);
 
   const onSubmit = async (data) => {
     setIsSubmitting(true);
@@ -41,12 +48,9 @@ Experience: ${data.experience}`;
     // Simulate slight delay for UX
     await new Promise((resolve) => setTimeout(resolve, 800));
     
-    // Open WhatsApp
-    window.open(whatsappUrl, '_blank');
-    
+    setWhatsappLink(whatsappUrl);
+    setStep(2);
     setIsSubmitting(false);
-    closeModal();
-    reset();
   };
 
   // Close on escape key
@@ -106,7 +110,8 @@ Experience: ${data.experience}`;
 
             {/* Scrollable Form Area */}
             <div className="p-6 sm:p-8 overflow-y-auto">
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+              {step === 1 ? (
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {/* Full Name */}
                   <div className="space-y-2">
@@ -259,11 +264,11 @@ Experience: ${data.experience}`;
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                       </svg>
-                      Connecting to WhatsApp...
+                      Submitting Details...
                     </span>
                   ) : (
                     <>
-                      <span>Submit & Chat on WhatsApp</span>
+                      <span>Submit Details</span>
                       <Send size={22} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                     </>
                   )}
@@ -277,6 +282,40 @@ Experience: ${data.experience}`;
                   </p>
                 </div>
               </form>
+            ) : (
+              <div className="flex flex-col items-center justify-center text-center space-y-6 py-6 sm:py-8">
+                <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-2 shadow-inner">
+                  <CheckCircle2 size={40} />
+                </div>
+                <div>
+                  <h4 className="text-2xl sm:text-3xl font-900 font-heading text-black mb-2">Details Submitted!</h4>
+                  <p className="text-slate-600 font-500 max-w-sm mx-auto">
+                    Your seat is temporarily reserved. Complete your pre-enrollment fee of ₹999 to secure it permanently.
+                  </p>
+                </div>
+                
+                <div className="w-full space-y-4 mt-8">
+                  <a 
+                    href={RAZORPAY_PRE_ENROLL_LINK} 
+                    target="_blank" 
+                    rel="noreferrer"
+                    onClick={closeModal}
+                    className="w-full flex items-center justify-center gap-3 bg-[var(--color-primary)] text-white font-900 font-heading tracking-wide text-lg py-4 px-6 rounded-2xl border-3 border-black shadow-[4px_4px_0px_#000] hover:shadow-[6px_6px_0px_#000] hover:-translate-y-1 transition-all duration-200"
+                  >
+                    <CreditCard size={24} /> Proceed to Payment (₹999)
+                  </a>
+                  
+                  <a 
+                    href={whatsappLink} 
+                    target="_blank" 
+                    rel="noreferrer"
+                    className="w-full flex items-center justify-center gap-2 bg-white text-black font-700 py-3 px-6 rounded-xl border-2 border-slate-300 hover:border-black hover:bg-slate-50 transition-all duration-200"
+                  >
+                    <Send size={18} className="text-[#25D366]" /> Send Details on WhatsApp
+                  </a>
+                </div>
+              </div>
+            )}
             </div>
           </motion.div>
         </div>
