@@ -147,9 +147,9 @@ const Hero = () => {
             <motion.img 
               animate={{ y: [-5, 5, -5] }}
               transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop" 
-              alt="Digital Marketing Classroom" 
-              className="w-full h-[280px] sm:h-[400px] lg:h-[500px] object-cover rounded-3xl border-4 border-black shadow-[8px_8px_0px_#000000] lg:shadow-[12px_12px_0px_#000000]"
+              src="/hero-image.png" 
+              alt="Digital Marketing Training Lucknow" 
+              className="w-full h-[280px] sm:h-[400px] lg:h-[500px] object-contain bg-black rounded-3xl border-4 border-black shadow-[8px_8px_0px_#000000] lg:shadow-[12px_12px_0px_#000000]"
             />
           </motion.div>
 
