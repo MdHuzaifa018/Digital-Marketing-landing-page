@@ -108,10 +108,17 @@ const Hero = () => {
             {/* CTAs */}
             <motion.div variants={item} className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-4 mt-6 w-full">
               <div className="flex flex-wrap gap-3 sm:gap-4 w-full sm:w-auto">
-                <button onClick={() => openModal()} className="btn btn-primary btn-lg flex-1 sm:flex-none justify-center">
+                <motion.button 
+                  onClick={() => openModal()} 
+                  className="btn btn-primary btn-lg flex-1 sm:flex-none justify-center origin-center"
+                  animate={{ scale: [1, 1.05, 1], rotate: [0, -2, 2, -2, 0] }}
+                  transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
                   <span>Enroll Now (₹999)</span>
                   <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                </button>
+                </motion.button>
                 <a href="#contact" className="btn btn-secondary btn-lg flex-1 sm:flex-none justify-center">
                   Contact Us
                 </a>
@@ -147,7 +154,7 @@ const Hero = () => {
             <motion.img 
               animate={{ y: [-5, 5, -5] }}
               transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-              src="/hero-image.png" 
+              src="/images/hero-image.png" 
               alt="Digital Marketing Training Lucknow" 
               className="w-full h-[280px] sm:h-[400px] lg:h-[500px] object-contain bg-black rounded-3xl border-4 border-black shadow-[8px_8px_0px_#000000] lg:shadow-[12px_12px_0px_#000000]"
             />
