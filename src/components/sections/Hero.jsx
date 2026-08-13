@@ -36,18 +36,6 @@ const Hero = () => {
       style={{ paddingTop: 'calc(var(--navbar-h) + 2rem)', paddingBottom: '4rem' }}
       aria-label="Homepage hero"
     >
-      {/* Photographic Background Overlay */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute inset-0 bg-white/85 sm:bg-white/80 z-10 backdrop-blur-[2px]"></div>
-        <img 
-          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2000&auto=format&fit=crop" 
-          alt="Digital Marketing Agency Background"
-          className="w-full h-full object-cover opacity-100 grayscale mix-blend-multiply scale-105" 
-        />
-        {/* Gradient fade out at bottom */}
-        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent z-20"></div>
-      </div>
-
       {/* Stark Ambient Mesh Grid Background */}
       <div
         aria-hidden="true"
