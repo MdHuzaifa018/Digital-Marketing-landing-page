@@ -111,12 +111,16 @@ const Hero = () => {
                 <motion.button 
                   onClick={() => openModal()} 
                   className="btn bg-[var(--color-secondary)] text-black border-2 border-black btn-lg flex-1 sm:flex-none justify-center relative overflow-visible"
-                  animate={{ 
-                    opacity: [1, 0.6, 1, 1, 0.4, 1, 1, 1, 1, 1],
-                    x: [0, -3, 3, -3, 3, 0, 0, 0, 0, 0],
-                    scale: [1, 1.05, 1, 1.05, 1, 1, 1, 1, 1, 1]
+                  variants={{
+                    flicker: {
+                      opacity: [1, 0.6, 1, 1, 0.4, 1, 1, 1, 1, 1],
+                      x: [0, -3, 3, -3, 3, 0, 0, 0, 0, 0],
+                      scale: [1, 1.05, 1, 1.05, 1, 1, 1, 1, 1, 1],
+                      transition: { repeat: Infinity, duration: 2.5, ease: "linear" }
+                    }
                   }}
-                  transition={{ repeat: Infinity, duration: 2.5, ease: "linear" }}
+                  initial="flicker"
+                  animate="flicker"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
