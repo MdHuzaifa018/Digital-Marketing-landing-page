@@ -110,13 +110,19 @@ const Hero = () => {
               <div className="flex flex-wrap gap-3 sm:gap-4 w-full sm:w-auto">
                 <motion.button 
                   onClick={() => openModal()} 
-                  className="btn btn-primary btn-lg flex-1 sm:flex-none justify-center origin-center"
-                  animate={{ scale: [1, 1.05, 1], rotate: [0, -2, 2, -2, 0] }}
-                  transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-                  whileHover={{ scale: 1.1 }}
+                  className="btn bg-[var(--color-secondary)] text-black border-2 border-black btn-lg flex-1 sm:flex-none justify-center relative overflow-visible"
+                  animate={{ 
+                    opacity: [1, 0.6, 1, 1, 0.4, 1, 1, 1, 1, 1],
+                    x: [0, -3, 3, -3, 3, 0, 0, 0, 0, 0],
+                    scale: [1, 1.05, 1, 1.05, 1, 1, 1, 1, 1, 1]
+                  }}
+                  transition={{ repeat: Infinity, duration: 2.5, ease: "linear" }}
+                  whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <span>Enroll Now (₹999)</span>
+                  {/* Outer Ping for Alert Effect */}
+                  <span className="absolute inset-0 bg-[var(--color-secondary)] border-2 border-black rounded-lg animate-ping opacity-40 -z-10 pointer-events-none"></span>
+                  <span className="font-900 tracking-wider">Enroll Now (₹999)</span>
                   <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                 </motion.button>
                 <a href="#contact" className="btn btn-secondary btn-lg flex-1 sm:flex-none justify-center">
