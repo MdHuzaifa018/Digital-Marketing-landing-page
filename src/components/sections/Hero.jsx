@@ -162,18 +162,17 @@ const Hero = () => {
             className="relative w-full mt-10 lg:mt-0 flex justify-center lg:justify-end"
           >
             {/* Decorative Background Blob */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] h-[85%] bg-[var(--color-secondary)] rounded-full blur-3xl opacity-30 -z-10 animate-pulse"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-[var(--color-secondary)] rounded-full blur-3xl opacity-40 -z-10 animate-pulse"></div>
             
             <motion.div 
-              animate={{ y: [-8, 8, -8] }}
+              animate={{ y: [-12, 12, -12] }}
               transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-              className="relative w-full max-w-[500px] rounded-[2rem] border-4 border-black shadow-[12px_12px_0px_var(--color-primary)] lg:shadow-[20px_20px_0px_var(--color-primary)] overflow-hidden bg-black group"
+              className="relative w-full max-w-[550px] z-10"
             >
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
               <img 
                 src="/images/hero-image.png" 
                 alt="Digital Marketing Training Lucknow" 
-                className="w-full h-auto object-contain transform group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-auto object-contain drop-shadow-[15px_15px_0px_var(--color-primary)] lg:drop-shadow-[20px_20px_0px_var(--color-primary)] hover:drop-shadow-[15px_15px_0px_var(--color-secondary)] hover:-translate-y-2 hover:scale-105 transition-all duration-500"
               />
             </motion.div>
           </motion.div>
