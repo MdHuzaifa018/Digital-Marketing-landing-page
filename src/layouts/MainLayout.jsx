@@ -59,7 +59,7 @@ const MainLayout = ({ children }) => {
   }, [location.pathname]);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen overflow-x-hidden w-full">
       <Navbar />
       <main className="flex-grow pt-[var(--navbar-h)] relative z-10" id="main-content">
         {children}

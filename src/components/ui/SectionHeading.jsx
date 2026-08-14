@@ -16,7 +16,7 @@ const SectionHeading = ({
   const animateClass = animate ? 'gsap-reveal' : '';
 
   return (
-    <div id={id} className={`flex flex-col gap-3 ${alignClass} ${animateClass} ${className}`}>
+    <div id={id} className={`flex flex-col w-full gap-3 ${alignClass} ${animateClass} ${className}`}>
       {eyebrow && (
         <span
           className="eyebrow uppercase font-heading tracking-widest text-sm"
@@ -36,7 +36,7 @@ const SectionHeading = ({
         </span>
       )}
       <h2
-        className={`font-heading font-900 text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-wider uppercase ${align === 'center' ? 'text-center' : ''} ${
+        className={`w-full break-words font-heading font-900 text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-wider uppercase ${align === 'center' ? 'text-center' : ''} ${
           dark ? 'text-white' : 'text-black'
         } ${spotlight ? 'text-spotlight' : ''}`}
       >
