@@ -55,7 +55,7 @@ const EnrollFormSection = () => {
             >
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[var(--color-secondary)] rounded-full blur-3xl opacity-30 -z-10 animate-pulse"></div>
               <img 
-                src="/images/course-banner.png" 
+                src="/images/course.png" 
                 alt="Digital Marketing Mentorship" 
                 className="w-full h-auto object-contain drop-shadow-[15px_15px_0px_var(--color-primary)] hover:-translate-y-2 hover:scale-105 transition-all duration-500"
               />

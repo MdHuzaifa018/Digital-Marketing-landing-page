@@ -102,9 +102,9 @@ const Home = () => {
         <FAQPreview />
       </div>
 
-      <div data-color="#f8fafc">
+      {/* <div data-color="#f8fafc">
         <EnrollFormSection />
-      </div>
+      </div> */}
     </>
   );
 };

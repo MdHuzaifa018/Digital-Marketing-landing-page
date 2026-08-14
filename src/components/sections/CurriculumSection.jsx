@@ -14,16 +14,38 @@ const CurriculumSection = () => {
   return (
     <section id="curriculum" className="section-py" aria-labelledby="curriculum-heading">
       <Container>
-        <div className="max-w-4xl mx-auto">
-          <SectionHeading
-            eyebrow="What You Will Learn"
-            title="Industry-Ready Curriculum."
-            subtitle="12 modules designed to take you from a beginner to a job-ready digital marketing expert."
-            align="left"
-            id="curriculum-heading"
-          />
+        <div className="grid lg:grid-cols-5 gap-10 lg:gap-12 items-start max-w-7xl mx-auto">
+          
+          {/* Left Column: Heading & Cutout Image */}
+          <div className="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left sticky top-24">
+            <SectionHeading
+              eyebrow="What You Will Learn"
+              title="Industry-Ready Curriculum."
+              subtitle="12 modules designed to take you from a beginner to a job-ready digital marketing expert."
+              align="left"
+              id="curriculum-heading"
+              className="lg:items-start"
+            />
+            
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="hidden lg:block mt-12 w-full max-w-[320px] relative"
+            >
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[var(--color-primary)] rounded-full blur-3xl opacity-20 -z-10 animate-pulse"></div>
+              <img 
+                src="/images/course.png" 
+                alt="Digital Marketing Syllabus" 
+                className="w-full h-auto object-contain drop-shadow-[15px_15px_0px_var(--color-secondary)] hover:-translate-y-2 hover:scale-105 transition-all duration-500"
+              />
+            </motion.div>
+          </div>
 
-          <div className="mt-12 space-y-4">
+          {/* Right Column: Accordions */}
+          <div className="lg:col-span-3 w-full mt-10 lg:mt-0">
+            <div className="space-y-4">
             {curriculum.map((module, index) => {
               const isOpen = openModule === index;
               return (
@@ -80,25 +102,26 @@ const CurriculumSection = () => {
                 </motion.div>
               );
             })}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-12 p-8 bg-[var(--color-primary)] rounded-3xl border-3 border-black text-center shadow-[6px_6px_0px_#000000]"
-          >
-            <h3 className="text-2xl font-900 font-heading text-white mb-4">Want the detailed syllabus?</h3>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button className="btn bg-white text-black hover:bg-slate-100 btn-lg inline-flex shadow-[6px_6px_0px_#000] hover:shadow-[2px_2px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] border-2 border-transparent">
-                <Download size={20} className="mr-2" />
-                Download Brochure
-              </button>
-              <button onClick={() => openModal()} className="btn bg-black text-white hover:bg-black/90 btn-lg inline-flex shadow-[6px_6px_0px_#000] hover:shadow-[2px_2px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px]">
-                Enroll Now <ArrowRight size={20} className="ml-2" />
-              </button>
             </div>
-          </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mt-12 p-8 bg-[var(--color-primary)] rounded-3xl border-3 border-black text-center shadow-[6px_6px_0px_#000000]"
+            >
+              <h3 className="text-2xl font-900 font-heading text-white mb-4">Want the detailed syllabus?</h3>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <button className="btn bg-white text-black hover:bg-slate-100 btn-lg inline-flex shadow-[6px_6px_0px_#000] hover:shadow-[2px_2px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] border-2 border-transparent">
+                  <Download size={20} className="mr-2" />
+                  Download Brochure
+                </button>
+                <button onClick={() => openModal()} className="btn bg-black text-white hover:bg-black/90 btn-lg inline-flex shadow-[6px_6px_0px_#000] hover:shadow-[2px_2px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px]">
+                  Enroll Now <ArrowRight size={20} className="ml-2" />
+                </button>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </Container>
     </section>
