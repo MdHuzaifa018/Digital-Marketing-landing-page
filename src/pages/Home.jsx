@@ -112,12 +112,12 @@ const Home = () => {
 const WhyDigitalMarketing = () => {
   return (
     <section className="section-py relative overflow-hidden" aria-labelledby="why-dm-heading">
-      {/* Huge Main Background Watermark */}
-      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-full max-w-4xl opacity-[0.03] pointer-events-none z-0">
+      {/* Huge Main Background Image */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-40 lg:opacity-60">
         <img 
           src="/images/course.png" 
           alt="Background Watermark" 
-          className="w-full h-auto object-contain object-right"
+          className="w-full h-full object-cover lg:object-contain object-right drop-shadow-[0px_0px_50px_#ffffff]"
         />
       </div>
 
