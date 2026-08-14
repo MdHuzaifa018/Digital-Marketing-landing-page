@@ -32,21 +32,42 @@ const EnrollFormSection = () => {
   return (
     <section id="enroll" className="section-py" aria-labelledby="enroll-heading">
       <Container>
-        <div className="max-w-4xl mx-auto">
-          <SectionHeading
-            eyebrow="Admissions Open"
-            title="Reserve Your Seat"
-            subtitle="Fill out the form below to apply for the upcoming batch. Our team will contact you shortly with the complete details."
-            dark={false}
-            id="enroll-heading"
-          />
+        <div className="grid lg:grid-cols-5 gap-10 lg:gap-12 items-center max-w-6xl mx-auto">
+          
+          {/* Left Column: Heading & Cutout Image */}
+          <div className="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left">
+            <SectionHeading
+              eyebrow="Admissions Open"
+              title="Reserve Your Seat"
+              subtitle="Fill out the form below to apply for the upcoming batch. Our team will contact you shortly with the complete details."
+              dark={false}
+              align="left"
+              id="enroll-heading"
+              className="lg:items-start"
+            />
+            
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="hidden lg:block mt-12 w-full max-w-[320px] relative"
+            >
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[var(--color-secondary)] rounded-full blur-3xl opacity-30 -z-10 animate-pulse"></div>
+              <img 
+                src="/images/course-banner.png" 
+                alt="Digital Marketing Mentorship" 
+                className="w-full h-auto object-contain drop-shadow-[15px_15px_0px_var(--color-primary)] hover:-translate-y-2 hover:scale-105 transition-all duration-500"
+              />
+            </motion.div>
+          </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: 24 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5 }}
-            className="mt-12 bg-white p-8 md:p-12 rounded-3xl border-3 border-black shadow-[8px_8px_0px_#000000]"
+            className="lg:col-span-3 w-full bg-white p-8 md:p-12 rounded-3xl border-3 border-black shadow-[8px_8px_0px_#000000] mt-10 lg:mt-0"
           >
             {isSuccess ? (
               <div className="text-center py-12">
