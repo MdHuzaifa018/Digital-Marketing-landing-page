@@ -12,7 +12,7 @@ const CurriculumSection = () => {
   const curriculum = COURSES[0].curriculum;
 
   return (
-    <section id="curriculum" className="section-py" aria-labelledby="curriculum-heading">
+    <section id="curriculum" className="section-py relative overflow-hidden" aria-labelledby="curriculum-heading">
       <Container>
         <div className="grid lg:grid-cols-5 gap-10 lg:gap-12 items-start max-w-7xl mx-auto">
           
