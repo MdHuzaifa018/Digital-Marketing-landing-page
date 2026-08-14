@@ -12,6 +12,7 @@ import WhyUsPreview from '../components/sections/WhyUsPreview';
 import Testimonials from '../components/sections/Testimonials';
 import FAQPreview from '../components/sections/FAQPreview';
 import ContactSection from '../components/sections/ContactSection';
+import EnrollFormSection from '../components/sections/EnrollFormSection';
 import SEO from '../components/common/SEO';
 import { motion } from 'framer-motion';
 import { Laptop, MessageSquare, Target, Trophy, ArrowUpRight, Globe2, TrendingUp } from 'lucide-react';
@@ -101,9 +102,9 @@ const Home = () => {
         <FAQPreview />
       </div>
 
-      {/* <div data-color="#ffffff">
-        <ContactSection />
-      </div> */}
+      <div data-color="#f8fafc">
+        <EnrollFormSection />
+      </div>
     </>
   );
 };
