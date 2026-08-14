@@ -32,7 +32,7 @@ const CurriculumSection = () => {
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="block my-8 lg:my-12 w-full max-w-[240px] sm:max-w-[320px] relative mx-auto lg:mx-0"
+              className="block my-8 lg:my-12 w-full max-w-[240px] sm:max-w-[320px] lg:max-w-[420px] xl:max-w-[460px] relative mx-auto lg:mx-0"
             >
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[var(--color-primary)] rounded-full blur-3xl opacity-20 -z-10 animate-pulse"></div>
               <img 
