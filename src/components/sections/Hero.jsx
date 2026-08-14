@@ -172,7 +172,7 @@ const Hero = () => {
               <img 
                 src="/images/hero-image.png" 
                 alt="Digital Marketing Training Lucknow" 
-                className="w-full h-auto object-contain drop-shadow-[15px_15px_0px_var(--color-primary)] lg:drop-shadow-[20px_20px_0px_var(--color-primary)] hover:drop-shadow-[15px_15px_0px_var(--color-secondary)] hover:-translate-y-2 hover:scale-105 transition-all duration-500"
+                className="w-full h-auto object-contain drop-shadow-[15px_15px_0px_var(--color-secondary)] lg:drop-shadow-[20px_20px_0px_var(--color-secondary)] hover:drop-shadow-[15px_15px_0px_var(--color-secondary)] hover:-translate-y-2 hover:scale-105 transition-all duration-500"
               />
             </motion.div>
           </motion.div>
