@@ -35,12 +35,12 @@ const REASONS = [
 const WhyUsPreview = () => {
   return (
     <section id="why-us" className="relative py-16 sm:py-24 overflow-hidden" aria-labelledby="why-us-heading">
-      {/* Subtle Agency Texture Background */}
+      {/* Decorative Cutout Background Image */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <img 
-          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2000&auto=format&fit=crop" 
-          alt="Agency Workspace"
-          className="w-full h-full object-cover opacity-[0.12] mix-blend-multiply grayscale"
+          src="/images/course.png" 
+          alt="Flybitfalcon background"
+          className="w-full h-full object-cover lg:object-contain object-left lg:object-right opacity-[0.05] grayscale mix-blend-multiply"
         />
       </div>
       <Container className="relative z-10">
