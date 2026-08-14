@@ -17,14 +17,14 @@ const CurriculumSection = () => {
         <div className="grid lg:grid-cols-5 gap-10 lg:gap-12 items-start max-w-7xl mx-auto">
           
           {/* Left Column: Heading & Cutout Image */}
-          <div className="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left sticky top-24">
+          <div className="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left sticky top-24 min-w-0 w-full overflow-visible">
             <SectionHeading
               eyebrow="What You Will Learn"
               title="Industry-Ready Curriculum."
               subtitle="12 modules designed to take you from a beginner to a job-ready digital marketing expert."
-              align="left"
+              align="center"
+              className="lg:!items-start lg:!text-left w-full"
               id="curriculum-heading"
-              className="lg:items-start"
             />
             
             <motion.div
@@ -44,8 +44,8 @@ const CurriculumSection = () => {
           </div>
 
           {/* Right Column: Accordions */}
-          <div className="lg:col-span-3 w-full mt-10 lg:mt-0">
-            <div className="space-y-4">
+          <div className="lg:col-span-3 w-full mt-10 lg:mt-0 min-w-0">
+            <div className="space-y-4 w-full">
             {curriculum.map((module, index) => {
               const isOpen = openModule === index;
               return (
@@ -64,11 +64,11 @@ const CurriculumSection = () => {
                     onClick={() => setOpenModule(isOpen ? -1 : index)}
                     aria-expanded={isOpen}
                   >
-                    <div className="flex items-center gap-4">
-                      <span className="text-sm font-900 font-heading text-[var(--color-primary)]">
+                    <div className="flex items-center gap-4 min-w-0">
+                      <span className="text-sm font-900 font-heading text-[var(--color-primary)] shrink-0">
                         {String(index + 1).padStart(2, '0')}
                       </span>
-                      <h3 className={`text-lg md:text-xl font-800 transition-colors ${isOpen ? 'text-black' : 'text-slate-800'}`}>
+                      <h3 className={`text-base sm:text-lg md:text-xl font-800 transition-colors min-w-0 break-words ${isOpen ? 'text-black' : 'text-slate-800'}`}>
                         {module.title}
                       </h3>
                     </div>
