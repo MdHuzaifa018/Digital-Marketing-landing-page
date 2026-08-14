@@ -130,10 +130,19 @@ const WhyDigitalMarketing = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bento-card gsap-reveal lg:col-span-2 bg-black text-white p-8 md:p-12 flex flex-col justify-between overflow-hidden relative border-2 border-black shadow-[6px_6px_0px_#000000]"
+            className="bento-card gsap-reveal lg:col-span-2 bg-black text-white p-8 md:p-12 flex flex-col justify-between overflow-hidden relative border-2 border-black shadow-[6px_6px_0px_#000000] group"
           >
+            {/* Decorative Background Cutout Image */}
+            <div className="absolute -right-10 -bottom-10 w-2/3 h-[120%] pointer-events-none opacity-40 grayscale group-hover:scale-105 transition-all duration-700 z-0">
+              <img 
+                src="/images/course.png" 
+                alt="Digital Marketing Career" 
+                className="w-full h-full object-contain object-right-bottom drop-shadow-[0px_0px_20px_var(--color-primary)]"
+              />
+            </div>
+
             <div className="relative z-10 max-w-md">
-              <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-6 border border-white/20">
+              <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-6 border border-white/20 backdrop-blur-sm">
                 <TrendingUp size={24} className="text-white" />
               </div>
               <h3 className="text-3xl md:text-4xl font-900 mb-4 text-white">High-Demand Skill</h3>
